@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>365 Pure Ocean Ltd. — Local Made Like Imported</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0b1f3a;
+  --ocean: #1a3a5c;
+  --mid: #1e5799;
+  --blue: #2563eb;
+  --sky: #3b82f6;
+  --gold: #c9a84c;
+  --gold-l: #e8c96a;
+  --cream: #fdf8f0;
+  --white: #ffffff;
+  --offwhite: #f8f9fc;
+  --ink: #0f172a;
+  --text: #334155;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--white); overflow-x: hidden; }
+
+/* ─── TOPBAR ─── */
+.topbar {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.topbar a { color: var(--gold); text-decoration: none; }
+.topbar span { color: rgba(255,255,255,0.4); margin: 0 0.5rem; }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+}
+.nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+.nav-logo svg { width: 36px; height: 36px; }
+.nav-brand-wrap { display: flex; flex-direction: column; line-height: 1.15; }
+.nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
+.nav-sub { font-size: 0.62rem; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; font-style: italic; }
+.nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+.nav-links > li { position: relative; }
+.nav-links a { padding: 0.45rem 0.85rem; font-size: 0.84rem; font-weight: 500; color: var(--text); text-decoration: none; border-radius: 6px; transition: background 0.18s, color 0.18s; display: block; }
+.nav-links a:hover { background: var(--offwhite); color: var(--navy); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.nav-search {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--offwhite); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.45rem 0.9rem;
+  font-size: 0.82rem; color: var(--muted);
+}
+.nav-search input { border: none; background: transparent; outline: none; font-size: 0.82rem; color: var(--ink); width: 150px; font-family: inherit; }
+.nav-search svg { width: 15px; height: 15px; stroke: var(--muted); flex-shrink: 0; }
+.nav-wa {
+  background: var(--navy); color: white; border: none;
+  padding: 0.5rem 1.2rem; border-radius: 8px;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
+  cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+  transition: background 0.2s;
+}
+.nav-wa:hover { background: var(--ocean); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+
+/* ─── HERO ─── */
+.hero {
+  background: url('https://cdn.kord.live/serve/a1jega3aml0M.jpg') center center / cover no-repeat;
+  padding: 5rem 4rem 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: flex-end;
+  min-height: 520px; overflow: hidden; position: relative;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(135deg, rgba(11,31,58,0.85) 0%, rgba(15,45,84,0.75) 45%, rgba(26,63,110,0.65) 100%),
+                    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.12) 0%, transparent 50%),
+                    radial-gradient(circle at 10% 80%, rgba(59,130,246,0.15) 0%, transparent 50%);
+}
+.hero-left { position: relative; z-index: 2; padding-bottom: 4rem; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-l); font-size: 0.72rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+.hero-badge svg { width: 10px; height: 10px; fill: var(--gold-l); }
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+  font-weight: 400; line-height: 1.1;
+  color: white; margin-bottom: 1.2rem;
+}
+.hero-h1 em { font-style: italic; color: var(--gold-l); }
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-style: italic;
+  color: rgba(255,255,255,0.55); margin-bottom: 1.6rem;
+  letter-spacing: 0.06em;
+}
+.hero-desc {
+  font-size: 0.9rem; color: rgba(255,255,255,0.65);
+  line-height: 1.8; max-width: 440px; margin-bottom: 2.2rem; font-weight: 300;
+}
+.hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.btn-hero-primary {
+  background: var(--gold); color: var(--navy); border: none;
+  padding: 0.8rem 2rem; border-radius: 8px;
+  font-size: 0.84rem; font-weight: 700; letter-spacing: 0.04em;
+  cursor: pointer; text-decoration: none; display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-hero-primary:hover { background: var(--gold-l); transform: translateY(-1px); }
+.btn-hero-outline {
+  background: transparent; color: white;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  padding: 0.8rem 2rem; border-radius: 8px;
+  font-size: 0.84rem; font-weight: 500;
+  cursor: pointer; text-decoration: none; display: inline-block;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-hero-outline:hover { border-color: white; background: rgba(255,255,255,0.06); }
+.hero-partners {
+  display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+}
+.hero-partners-label { font-size: 0.68rem; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; text-transform: uppercase; }
+.partner-badge {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.35rem 0.85rem; border-radius: 6px;
+  font-size: 0.72rem; color: rgba(255,255,255,0.55); font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.hero-right { position: relative; z-index: 2; display: flex; justify-content: center; align-items: flex-end; }
+.hero-books { display: flex; align-items: flex-end; gap: -1rem; position: relative; }
+/* 3D Book CSS */
+.book-3d { position: relative; cursor: pointer; }
+.book-3d:hover .book-front { transform: rotateY(-25deg); }
+.book-cover {
+  width: 130px; height: 185px; border-radius: 3px 8px 8px 3px;
+  position: relative; overflow: hidden;
+  box-shadow: 6px 8px 24px rgba(0,0,0,0.5), 2px 2px 0 rgba(0,0,0,0.3);
+}
+.book-front {
+  width: 130px; height: 185px; position: relative;
+  transform-style: preserve-3d; transform: rotateY(-8deg);
+  transition: transform 0.4s ease;
+}
+.book-face {
+  border-radius: 3px 8px 8px 3px; overflow: hidden;
+  width: 130px; height: 185px;
+  box-shadow: 8px 10px 30px rgba(0,0,0,0.6);
+}
+.book-spine {
+  position: absolute; left: -12px; top: 4px; bottom: 4px; width: 12px;
+  border-radius: 3px 0 0 3px;
+  transform: rotateY(90deg); transform-origin: right center;
+}
+.b1-face { background: linear-gradient(160deg, #1a3a6a 0%, #0d2240 40%, #1e4a8a 100%); }
+.b1-spine { background: linear-gradient(180deg, #0d2240, #1a3a6a); }
+.b2-face { background: linear-gradient(160deg, #8b5e0a 0%, #5c3d08 40%, #c9a84c 100%); }
+.b2-spine { background: linear-gradient(180deg, #5c3d08, #8b5e0a); }
+.b3-face { background: linear-gradient(160deg, #1e3a1e 0%, #102010 40%, #2d5a2d 100%); }
+.b3-spine { background: linear-gradient(180deg, #102010, #1e3a1e); }
+.book-title-art {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 1rem;
+  text-align: center;
+}
+.book-title-art .yr { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: rgba(255,255,255,0.9); line-height: 1; }
+.book-title-art .bname { font-size: 0.48rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 0.3rem; }
+.book-title-art .divider { width: 30px; height: 1px; background: rgba(255,255,255,0.3); margin: 0.5rem auto; }
+.book-title-art .btype { font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.book-deco { position: absolute; bottom: 0.6rem; left: 0; right: 0; display: flex; justify-content: center; }
+.book-deco-line { width: 50px; height: 1.5px; background: rgba(255,255,255,0.2); }
+.book-wrap { position: relative; }
+.book-wrap:nth-child(2) { margin-left: -20px; margin-bottom: 20px; z-index: 2; }
+.book-wrap:nth-child(3) { margin-left: -15px; }
+.book-wrap:nth-child(1) { z-index: 1; }
+.book-wrap:nth-child(3) { z-index: 0; }
+.book-shadow {
+  position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
+  width: 110px; height: 20px; border-radius: 50%;
+  background: rgba(0,0,0,0.35); filter: blur(8px);
+}
+.hero-stats-strip {
+  background: rgba(255,255,255,0.06); border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; gap: 0; margin-top: auto;
+  position: absolute; bottom: 0; left: 0; right: 0;
+  z-index: 2;
+}
+.hstat {
+  flex: 1; padding: 1rem 1.5rem; text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.hstat:last-child { border-right: none; }
+.hstat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 500; color: white; line-height: 1; }
+.hstat-label { font-size: 0.68rem; color: rgba(255,255,255,0.45); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.2rem; }
+
+/* ─── MARQUEE ─── */
+.marquee-bar { background: var(--gold); padding: 0.65rem 0; overflow: hidden; }
+.marquee-track { display: flex; gap: 0; white-space: nowrap; animation: marquee 26s linear infinite; }
+.marquee-item { display: inline-flex; align-items: center; gap: 1.2rem; padding: 0 2rem; font-size: 0.78rem; font-weight: 600; color: var(--navy); letter-spacing: 0.12em; text-transform: uppercase; }
+.marquee-dot { width: 3px; height: 3px; background: var(--navy); border-radius: 50%; opacity: 0.4; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ─── SECTIONS GENERAL ─── */
+section { position: relative; }
+.section-pad { padding: 5.5rem 4rem; }
+.section-pad-sm { padding: 4rem 4rem; }
+.eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.8rem; }
+.eyebrow-dot { width: 5px; height: 5px; background: var(--blue); border-radius: 50%; }
+.section-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--navy); }
+.section-h2 em { font-style: italic; color: var(--gold); }
+.section-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.8; font-weight: 300; max-width: 480px; margin-top: 0.8rem; }
+
+/* ─── CATEGORY STRIP ─── */
+.categories-section { background: var(--offwhite); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.categories-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.categories-header a { font-size: 0.8rem; font-weight: 600; color: var(--blue); text-decoration: none; }
+.cat-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+.cat-card {
+  background: white; border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem 1rem;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.cat-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(37,99,235,0.1); }
+.cat-card.active { border-color: var(--navy); background: var(--navy); }
+.cat-icon {
+  width: 52px; height: 52px; border-radius: 10px; margin: 0 auto 0.8rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.cat-name { font-size: 0.78rem; font-weight: 600; color: var(--ink); }
+.cat-card.active .cat-name { color: white; }
+.cat-count { font-size: 0.68rem; color: var(--muted); margin-top: 0.2rem; }
+.cat-card.active .cat-count { color: rgba(255,255,255,0.6); }
+
+/* ─── TOP PRODUCTS ─── */
+.products-section { background: white; }
+.products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; }
+.products-header a { font-size: 0.8rem; font-weight: 600; color: var(--blue); text-decoration: none; }
+.filter-tabs { display: flex; gap: 0.4rem; margin-top: 0.8rem; }
+.ftab {
+  padding: 0.35rem 0.9rem; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 600; cursor: pointer;
+  border: 1.5px solid var(--border); background: white; color: var(--muted);
+  transition: all 0.18s;
+}
+.ftab.active, .ftab:hover { background: var(--navy); border-color: var(--navy); color: white; }
+.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.product-card {
+  background: white; border: 1.5px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  cursor: pointer;
+}
+.product-card:hover { box-shadow: 0 12px 36px rgba(11,31,58,0.1); transform: translateY(-4px); border-color: rgba(11,31,58,0.15); }
+.product-img {
+  background: var(--offwhite); height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.product-badge {
+  position: absolute; top: 0.75rem; left: 0.75rem;
+  background: var(--navy); color: white; font-size: 0.62rem;
+  font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.25rem 0.6rem; border-radius: 4px;
+}
+.product-badge.gold { background: var(--gold); color: var(--navy); }
+.product-badge.green { background: #16a34a; }
+.product-3d {
+  width: 90px; height: 128px; position: relative;
+  transform: perspective(400px) rotateY(-12deg);
+  transition: transform 0.3s;
+}
+.product-card:hover .product-3d { transform: perspective(400px) rotateY(-20deg) scale(1.05); }
+.prod-face {
+  width: 90px; height: 128px; border-radius: 2px 6px 6px 2px;
+  box-shadow: 6px 8px 20px rgba(0,0,0,0.35);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0.6rem; text-align: center; position: relative; overflow: hidden;
+}
+.prod-face::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+  background: rgba(0,0,0,0.2);
+}
+.prod-yr { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: rgba(255,255,255,0.9); line-height: 1; }
+.prod-nm { font-size: 0.38rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 0.25rem; }
+.prod-ln { width: 24px; height: 1px; background: rgba(255,255,255,0.3); margin: 0.35rem auto; }
+.prod-tp { font-size: 0.35rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); text-transform: uppercase; }
+.p-navy { background: linear-gradient(145deg, #1a3a6a, #0d2240); }
+.p-gold { background: linear-gradient(145deg, #8b5e0a, #c9a84c); }
+.p-green { background: linear-gradient(145deg, #1e4a2a, #2d6b3a); }
+.p-red { background: linear-gradient(145deg, #5a1a1a, #8b2a2a); }
+.p-teal { background: linear-gradient(145deg, #0f3a4a, #1a6a8a); }
+.p-purple { background: linear-gradient(145deg, #2a1a5a, #4a2a8a); }
+.p-charcoal { background: linear-gradient(145deg, #1a1a2a, #2a2a4a); }
+.p-brown { background: linear-gradient(145deg, #3a2010, #5a3020); }
+.product-info { padding: 1.1rem 1.2rem; }
+.product-name { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; line-height: 1.3; }
+.product-type { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.7rem; }
+.product-footer { display: flex; align-items: center; justify-content: space-between; }
+.product-price { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+.product-price span { font-size: 0.72rem; color: var(--muted); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; }
+.product-btn {
+  background: var(--navy); color: white; border: none;
+  padding: 0.45rem 0.9rem; border-radius: 7px;
+  font-size: 0.72rem; font-weight: 600; cursor: pointer;
+  transition: background 0.2s;
+}
+.product-btn:hover { background: var(--ocean); }
+
+/* ─── FEATURE BANNER ─── */
+.feature-banner {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%);
+  padding: 5rem 4rem;
+}
+.feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.feature-books { display: flex; gap: 1.5rem; align-items: flex-end; justify-content: center; }
+.fb-wrap { position: relative; }
+.fb-cover {
+  border-radius: 3px 8px 8px 3px;
+  box-shadow: 8px 12px 30px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 1rem; text-align: center;
+  position: relative; overflow: hidden;
+}
+.fb-cover::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 8px;
+  background: rgba(0,0,0,0.2);
+}
+.fb-yr { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: rgba(255,255,255,0.95); line-height: 1; }
+.fb-nm { font-size: 0.45rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 0.35rem; }
+.fb-ln { width: 35px; height: 1px; background: rgba(255,255,255,0.25); margin: 0.5rem auto; }
+.fb-tp { font-size: 0.42rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.fb-tag {
+  position: absolute; top: -8px; right: -8px;
+  background: var(--gold); color: var(--navy);
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em;
+  padding: 0.3rem 0.6rem; border-radius: 6px; white-space: nowrap;
+}
+.feature-text .eyebrow { color: var(--gold-l); }
+.feature-text .eyebrow-dot { background: var(--gold-l); }
+.feature-text .section-h2 { color: white; }
+.feature-text .section-h2 em { color: var(--gold-l); }
+.feature-text .section-sub { color: rgba(255,255,255,0.6); max-width: 100%; }
+.feature-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+.flist-item { display: flex; align-items: center; gap: 0.8rem; font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+.flist-check {
+  width: 22px; height: 22px; background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.4); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.flist-check svg { width: 11px; height: 11px; stroke: var(--gold-l); stroke-width: 2.5; }
+.feature-actions { display: flex; gap: 0.9rem; margin-top: 2rem; }
+.btn-gold {
+  background: var(--gold); color: var(--navy); border: none;
+  padding: 0.8rem 2rem; border-radius: 8px;
+  font-size: 0.84rem; font-weight: 700; cursor: pointer; text-decoration: none;
+  display: inline-block; transition: background 0.2s;
+}
+.btn-gold:hover { background: var(--gold-l); }
+.btn-ghost {
+  background: rgba(255,255,255,0.08); color: white;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  padding: 0.8rem 2rem; border-radius: 8px;
+  font-size: 0.84rem; font-weight: 500; cursor: pointer; text-decoration: none;
+  display: inline-block; transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.35); }
+
+/* ─── HOW IT WORKS ─── */
+.how-section { background: var(--offwhite); }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.step-card {
+  background: white; border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 2rem 1.5rem; position: relative;
+  transition: box-shadow 0.25s, border-color 0.25s;
+}
+.step-card:hover { box-shadow: 0 8px 24px rgba(11,31,58,0.08); border-color: rgba(11,31,58,0.12); }
+.step-connector {
+  position: absolute; top: 3rem; right: -0.75rem; z-index: 1;
+  width: 1.5rem; height: 2px; background: var(--border);
+}
+.step-card:last-child .step-connector { display: none; }
+.step-num {
+  width: 44px; height: 44px; background: var(--navy); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: white; font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.step-title { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+.step-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+/* ─── WHY US ─── */
+.why-section { background: white; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.why-card {
+  background: var(--offwhite); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 2rem;
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.why-card:hover { border-color: var(--blue); box-shadow: 0 4px 18px rgba(37,99,235,0.08); }
+.why-icon {
+  width: 48px; height: 48px; border-radius: 10px;
+  background: var(--navy); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 1.3rem;
+}
+.why-title { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; }
+.why-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+/* ─── TESTIMONIAL ─── */
+.testimonial-section { background: var(--cream); }
+.testi-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; }
+.testi-card {
+  background: white; border: 1.5px solid var(--border); border-radius: 16px;
+  padding: 2.2rem; box-shadow: 0 4px 24px rgba(11,31,58,0.06);
+}
+.testi-stars { color: var(--gold); font-size: 1rem; letter-spacing: 0.1rem; margin-bottom: 1rem; }
+.testi-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 1.5rem; }
+.testi-author { display: flex; align-items: center; gap: 0.8rem; }
+.testi-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--navy); display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: white; font-weight: 600;
+}
+.testi-name { font-size: 0.88rem; font-weight: 700; color: var(--ink); }
+.testi-role { font-size: 0.72rem; color: var(--muted); }
+.testi-cards-stack { display: flex; flex-direction: column; gap: 1rem; }
+.testi-mini { background: white; border: 1.5px solid var(--border); border-radius: 12px; padding: 1.4rem; }
+.testi-mini .testi-quote { font-size: 0.9rem; margin-bottom: 1rem; }
+
+/* ─── CONTACT / QUOTE ─── */
+.contact-section { background: var(--navy); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-left { padding-top: 1rem; }
+.contact-left .section-h2 { color: white; }
+.contact-left .section-sub { color: rgba(255,255,255,0.55); }
+.contact-details { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.4rem; }
+.cd-item { display: flex; gap: 1rem; align-items: flex-start; }
+.cd-icon {
+  width: 40px; height: 40px; background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 9px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cd-icon svg { width: 17px; height: 17px; stroke: var(--gold-l); fill: none; stroke-width: 1.5; }
+.cd-label { font-size: 0.68rem; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.cd-val { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+.cd-val a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.cd-val a:hover { color: var(--gold-l); }
+.socials { display: flex; gap: 0.6rem; margin-top: 2rem; }
+.soc-btn {
+  display: flex; align-items: center; gap: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.15); padding: 0.5rem 0.9rem; border-radius: 8px;
+  font-size: 0.74rem; color: rgba(255,255,255,0.6); text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.soc-btn:hover { border-color: var(--gold-l); color: var(--gold-l); }
+.soc-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+/* FORM */
+.quote-form-box {
+  background: white; border-radius: 16px; padding: 2.2rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+}
+.qf-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
+.qf-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem; }
+.qform { display: flex; flex-direction: column; gap: 0.9rem; }
+.qf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.qf-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.qf-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+.qf-input, .qf-select, .qf-textarea {
+  background: var(--offwhite); border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 0.7rem 0.9rem;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.86rem;
+  color: var(--ink); outline: none; transition: border-color 0.2s;
+  width: 100%; resize: none;
+}
+.qf-input:focus, .qf-select:focus, .qf-textarea:focus { border-color: var(--blue); background: white; }
+.qf-input::placeholder, .qf-textarea::placeholder { color: var(--muted); }
+.qf-select { appearance: none; cursor: pointer; }
+.wa-submit {
+  background: #25D366; color: white; border: none;
+  padding: 0.9rem; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.86rem; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  transition: background 0.2s; margin-top: 0.3rem;
+}
+.wa-submit:hover { background: #1ebe5a; }
+.wa-submit svg { width: 18px; height: 18px; fill: white; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 3.5rem 4rem 2rem;
+}
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 1.8rem; }
+.footer-brand p { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.75; margin-top: 0.9rem; font-weight: 300; max-width: 240px; }
+.footer-logo-wrap { display: flex; align-items: center; gap: 0.7rem; }
+.footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: white; }
+.footer-brand-sub { font-size: 0.56rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; }
+.footer-col h4 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.1rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-col ul a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; font-weight: 300; }
+.footer-col ul a:hover { color: white; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+.footer-copy { font-size: 0.74rem; color: rgba(255,255,255,0.3); }
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 0.9rem; color: var(--gold); letter-spacing: 0.06em;
+}
+
+/* ─── FLOATING WA ─── */
+.wa-float {
+  position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 200;
+  width: 54px; height: 54px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+.wa-float svg { width: 26px; height: 26px; fill: white; }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ─── MOBILE ─── */
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 98;
+  background: rgba(11,31,58,0.97); backdrop-filter: blur(20px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.8rem;
+  transform: translateX(100%); transition: transform 0.35s ease;
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: white; text-decoration: none; }
+
+@media (max-width: 1100px) {
+  nav, .section-pad, .section-pad-sm, footer { padding-left: 2rem; padding-right: 2rem; }
+  .topbar { display: none; }
+  .nav-search, .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; padding: 5rem 2rem 0; }
+  .hero-right { display: none; }
+  .hero-stats-strip { position: relative; }
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-inner, .testi-inner, .contact-inner, .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .steps-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .step-connector { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+  .qf-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero-h1 { font-size: 2.4rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>📍 Shomolu, Onipanu, Lagos · Factory: Ilupeju, Lagos</span>
+  <span>Free consultation for corporate orders <a href="#quote">→ Get a Quote</a></span>
+  <span>Call: <a href="tel:+2349031500082">09031500082</a></span>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <img src="https://cdn.kord.live/serve/16ygEWkR4kcD.jpg" alt="365 Pure Ocean Ltd. Logo" style="height:48px;width:auto;object-fit:contain;"/>
+    <div class="nav-brand-wrap">
+      <span class="nav-brand">365 Pure Ocean LTD</span>
+      <span class="nav-sub">Local Made Like Imported</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search products…"/>
+    </div>
+    <a href="#quote" class="nav-wa">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.455 5.455 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 1.5C6.22 1.5 1.5 6.22 1.5 12.05a10.53 10.53 0 0 0 1.42 5.14L1.5 22.5l5.42-1.39A10.5 10.5 0 0 0 12.05 22.6c5.83 0 10.55-4.72 10.55-10.55S17.88 1.5 12.05 1.5z"/></svg>
+      Get a Quote
+    </a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#products" onclick="toggleMenu()">Products</a>
+  <a href="#process" onclick="toggleMenu()">How It Works</a>
+  <a href="#why" onclick="toggleMenu()">Why Us</a>
+  <a href="#quote" onclick="toggleMenu()">Get a Quote</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <svg viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+        Nigeria's Premium Stationery Manufacturer
+      </div>
+      <h1 class="hero-h1">
+        Meet Your Next<br/>
+        <em>Signature Diary</em><br/>
+        &amp; Corporate Gift
+      </h1>
+      <p class="hero-tagline">"Local Made Like Imported"</p>
+      <p class="hero-desc">Custom corporate diaries, premium notebooks, branded journals, and promotional gift items — manufactured at our Ilupeju factory to international standards.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-hero-primary">Browse Our Products</a>
+        <a href="#quote" class="btn-hero-outline">Request a Quote</a>
+      </div>
+      <div class="hero-partners">
+        <span class="hero-partners-label">Available via</span>
+        <span class="partner-badge">WhatsApp Orders</span>
+        <span class="partner-badge">Nationwide Delivery</span>
+        <span class="partner-badge">Corporate Supply</span>
+      </div>
+    </div>
+    <div class="hero-right" id="about">
+      <div class="hero-books">
+        <div class="book-wrap">
+          <div class="book-shadow"></div>
+          <div class="book-3d">
+            <div class="book-front">
+              <div class="book-face b3-face">
+                <div class="book-title-art">
+                  <div class="yr">365</div>
+                  <div class="bname">Pure Ocean</div>
+                  <div class="divider"></div>
+                  <div class="btype">Executive Journal</div>
+                </div>
+                <div class="book-deco"><div class="book-deco-line"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="book-wrap">
+          <div class="book-shadow"></div>
+          <div class="book-3d" style="transform:perspective(400px) rotateY(-5deg);">
+            <div class="book-front" style="transform:rotateY(-5deg);">
+              <div class="book-face b2-face" style="height:210px; width:148px;">
+                <div class="book-title-art">
+                  <div class="yr" style="font-size:2.6rem;">2025</div>
+                  <div class="bname">Corporate Diary</div>
+                  <div class="divider"></div>
+                  <div class="btype">365 Pure Ocean Ltd.</div>
+                </div>
+                <div class="book-deco"><div class="book-deco-line"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="book-wrap">
+          <div class="book-shadow"></div>
+          <div class="book-3d">
+            <div class="book-front">
+              <div class="book-face b1-face">
+                <div class="book-title-art">
+                  <div class="yr">NB</div>
+                  <div class="bname">Premium Notebook</div>
+                  <div class="divider"></div>
+                  <div class="btype">Custom Branded</div>
+                </div>
+                <div class="book-deco"><div class="book-deco-line"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats-strip">
+    <div class="hstat"><div class="hstat-num">1976</div><div class="hstat-label">Est. Year</div></div>
+    <div class="hstat"><div class="hstat-num">100%</div><div class="hstat-label">Made in Nigeria</div></div>
+    <div class="hstat"><div class="hstat-num">6+</div><div class="hstat-label">Product Lines</div></div>
+    <div class="hstat"><div class="hstat-num">∞</div><div class="hstat-label">Custom Options</div></div>
+    <div class="hstat"><div class="hstat-num">🚚</div><div class="hstat-label">Nationwide Delivery</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>Corporate Diaries</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Custom Notebooks</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Branded Journals</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Promotional Gift Items</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Commercial Printing</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Corporate Branding</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Local Made Like Imported</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Corporate Diaries</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Custom Notebooks</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Branded Journals</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Promotional Gift Items</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Commercial Printing</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Corporate Branding</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Local Made Like Imported</span><div class="marquee-dot"></div></div>
+  </div>
+</div>
+
+<!-- ═══ CATEGORIES ═══ -->
+<section class="categories-section section-pad-sm">
+  <div class="categories-header reveal">
+    <div>
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Featured Categories</div>
+      <h2 class="section-h2" style="font-size:1.8rem;">Browse by Product Type</h2>
+    </div>
+    <a href="#products">View All Products →</a>
+  </div>
+  <div class="cat-grid">
+    <a href="#products" class="cat-card active reveal">
+      <div class="cat-icon" style="background:rgba(201,168,76,0.15);">📔</div>
+      <div class="cat-name" style="color:white;">Diaries</div>
+      <div class="cat-count">Custom Sizes</div>
+    </a>
+    <a href="#products" class="cat-card reveal reveal-delay-1">
+      <div class="cat-icon" style="background:rgba(37,99,235,0.08);">📓</div>
+      <div class="cat-name">Notebooks</div>
+      <div class="cat-count">A4, A5, A6</div>
+    </a>
+    <a href="#products" class="cat-card reveal reveal-delay-2">
+      <div class="cat-icon" style="background:rgba(22,163,74,0.08);">📒</div>
+      <div class="cat-name">Journals</div>
+      <div class="cat-count">Premium Lined</div>
+    </a>
+    <a href="#products" class="cat-card reveal reveal-delay-3">
+      <div class="cat-icon" style="background:rgba(234,179,8,0.1);">🎁</div>
+      <div class="cat-name">Gift Sets</div>
+      <div class="cat-count">Corporate Packs</div>
+    </a>
+    <a href="#products" class="cat-card reveal reveal-delay-4">
+      <div class="cat-icon" style="background:rgba(239,68,68,0.08);">🖨️</div>
+      <div class="cat-name">Commercial Print</div>
+      <div class="cat-count">Bulk Orders</div>
+    </a>
+    <a href="#products" class="cat-card reveal reveal-delay-5">
+      <div class="cat-icon" style="background:rgba(168,85,247,0.08);">✏️</div>
+      <div class="cat-name">Pads & Letterheads</div>
+      <div class="cat-count">Office Stationery</div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ PRODUCTS ═══ -->
+<section id="products" class="products-section section-pad">
+  <div class="products-header reveal">
+    <div>
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Our Products</div>
+      <h2 class="section-h2">Top Products This Season</h2>
+      <div class="filter-tabs">
+        <button class="ftab active" onclick="filterTab(this)">All</button>
+        <button class="ftab" onclick="filterTab(this)">Diaries</button>
+        <button class="ftab" onclick="filterTab(this)">Notebooks</button>
+        <button class="ftab" onclick="filterTab(this)">Journals</button>
+        <button class="ftab" onclick="filterTab(this)">Gift Sets</button>
+      </div>
+    </div>
+    <a href="#quote">Order Custom →</a>
+  </div>
+  <div class="products-grid">
+    <!-- Card 1 -->
+    <div class="product-card reveal">
+      <div class="product-img">
+        <span class="product-badge gold">Best Seller</span>
+        <div class="product-3d">
+          <div class="prod-face p-navy">
+            <div class="prod-yr">2025</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Corporate Diary</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Executive Corporate Diary 2025</div>
+        <div class="product-type">Hardcover · A5 · Custom Branding Available</div>
+        <div class="product-footer">
+          <div class="product-price">₦ 8,500 <span>/ unit (min. 50pcs)</span></div>
+          <button class="product-btn" onclick="orderWA('Executive Corporate Diary 2025')">Order</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-img">
+        <span class="product-badge">Premium</span>
+        <div class="product-3d">
+          <div class="prod-face p-gold">
+            <div class="prod-yr">365</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Luxury Notebook</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Gold Series Premium Notebook</div>
+        <div class="product-type">Softcover · A5 · Foil Emboss Option</div>
+        <div class="product-footer">
+          <div class="product-price">₦ 5,200 <span>/ unit (min. 30pcs)</span></div>
+          <button class="product-btn" onclick="orderWA('Gold Series Premium Notebook')">Order</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-img">
+        <span class="product-badge green">New</span>
+        <div class="product-3d">
+          <div class="prod-face p-green">
+            <div class="prod-yr">JNL</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Executive Journal</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Signature Executive Journal</div>
+        <div class="product-type">Hardcover · A4 · Ribbon Marker</div>
+        <div class="product-footer">
+          <div class="product-price">₦ 6,800 <span>/ unit (min. 20pcs)</span></div>
+          <button class="product-btn" onclick="orderWA('Signature Executive Journal')">Order</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-img">
+        <div class="product-3d">
+          <div class="prod-face p-red">
+            <div class="prod-yr">GFT</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Gift Set</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Corporate Gift Box Set</div>
+        <div class="product-type">Diary + Notebook + Pen · Branded Box</div>
+        <div class="product-footer">
+          <div class="product-price">₦ 18,000 <span>/ set (min. 10 sets)</span></div>
+          <button class="product-btn" onclick="orderWA('Corporate Gift Box Set')">Order</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="product-card reveal">
+      <div class="product-img">
+        <span class="product-badge">Popular</span>
+        <div class="product-3d">
+          <div class="prod-face p-teal">
+            <div class="prod-yr">PAD</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Writing Pad</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Branded Writing Pad & Letterhead</div>
+        <div class="product-type">A4 · 50 Leaves · Custom Print</div>
+        <div class="product-footer">
+          <div class="product-price">₦ 2,800 <span>/ pad (min. 100pcs)</span></div>
+          <button class="product-btn" onclick="orderWA('Branded Writing Pad & Letterhead')">Order</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 6 -->
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-img">
+        <div class="product-3d">
+          <div class="prod-face p-purple">
+            <div class="prod-yr">PRO</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Promo Notebook</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Promotional Pocket Notebook</div>
+        <div class="product-type">Softcover · A6 · Bulk Event Order</div>
+        <div class="product-footer">
+          <div class="product-price">₦ 1,500 <span>/ unit (min. 200pcs)</span></div>
+          <button class="product-btn" onclick="orderWA('Promotional Pocket Notebook')">Order</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 7 -->
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-img">
+        <span class="product-badge gold">Top Pick</span>
+        <div class="product-3d">
+          <div class="prod-face p-charcoal">
+            <div class="prod-yr">PRM</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Premium Diary</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Premium Hardback Diary</div>
+        <div class="product-type">Faux Leather · A5 · Gilt-Edge Pages</div>
+        <div class="product-footer">
+          <div class="product-price">₦ 12,000 <span>/ unit (min. 25pcs)</span></div>
+          <button class="product-btn" onclick="orderWA('Premium Hardback Diary')">Order</button>
+        </div>
+      </div>
+    </div>
+    <!-- Card 8 -->
+    <div class="product-card reveal reveal-delay-3">
+      <div class="product-img">
+        <div class="product-3d">
+          <div class="prod-face p-brown">
+            <div class="prod-yr">PRT</div>
+            <div class="prod-nm">Pure Ocean</div>
+            <div class="prod-ln"></div>
+            <div class="prod-tp">Print Service</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Commercial Printing Package</div>
+        <div class="product-type">Full Color · Fast Turnaround · Nationwide</div>
+        <div class="product-footer">
+          <div class="product-price">Custom <span>pricing</span></div>
+          <button class="product-btn" onclick="orderWA('Commercial Printing Package')">Enquire</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURE BANNER ═══ -->
+<section class="feature-banner">
+  <div class="feature-inner">
+    <div class="feature-books reveal">
+      <div class="fb-wrap" style="position:relative;">
+        <div class="fb-tag">NEW 2025</div>
+        <div class="fb-cover p-navy" style="width:150px; height:210px;">
+          <div class="fb-yr">2025</div>
+          <div class="fb-nm">Pure Ocean</div>
+          <div class="fb-ln"></div>
+          <div class="fb-tp">Corporate Diary</div>
+        </div>
+      </div>
+      <div class="fb-wrap" style="margin-top:2rem;">
+        <div class="fb-cover p-gold" style="width:130px; height:185px;">
+          <div class="fb-yr">365</div>
+          <div class="fb-nm">Pure Ocean</div>
+          <div class="fb-ln"></div>
+          <div class="fb-tp">Luxury Journal</div>
+        </div>
+      </div>
+      <div class="fb-wrap" style="margin-top:3.5rem; position:relative;">
+        <div class="fb-cover p-green" style="width:120px; height:170px;">
+          <div class="fb-yr">NB</div>
+          <div class="fb-nm">Pure Ocean</div>
+          <div class="fb-ln"></div>
+          <div class="fb-tp">Notebook</div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-text reveal reveal-delay-2">
+      <div class="eyebrow"><div class="eyebrow-dot"></div>365 Pure Ocean Ltd.</div>
+      <h2 class="section-h2">
+        The Best Choice<br/><em>For Your Brand</em>
+      </h2>
+      <p class="section-sub">We believe every Nigerian corporate brand deserves world-class stationery, made right here at home. Our Ilupeju factory ensures every product exceeds expectations.</p>
+      <div class="feature-list">
+        <div class="flist-item"><div class="flist-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg></div>Premium quality materials, locally sourced and finished</div>
+        <div class="flist-item"><div class="flist-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg></div>Full bespoke branding — logo, colors, custom layouts</div>
+        <div class="flist-item"><div class="flist-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg></div>Fast, reliable turnaround with nationwide delivery</div>
+        <div class="flist-item"><div class="flist-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg></div>Corporate supply agreements for annual orders</div>
+        <div class="flist-item"><div class="flist-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg></div>Our Mission — Making Nigerian manufacturing world-class</div>
+      </div>
+      <div class="feature-actions">
+        <a href="#quote" class="btn-gold">Start Your Order</a>
+        <a href="#contact" class="btn-ghost">Talk to Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="process" class="how-section section-pad">
+  <div style="text-align:center; max-width:520px; margin:0 auto 0;">
+    <div class="eyebrow" style="justify-content:center;"><div class="eyebrow-dot"></div>Our Process</div>
+    <h2 class="section-h2 reveal">From Brief to <em>Beautiful Product</em></h2>
+    <p class="section-sub reveal reveal-delay-1" style="margin: 0 auto; text-align:center; max-width:420px;">A clear, streamlined process — from first contact to delivery at your door.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card reveal">
+      <div class="step-connector"></div>
+      <div class="step-num">01</div>
+      <div class="step-title">Consultation & Brief</div>
+      <div class="step-desc">Share your brand assets, quantities, and specifications via WhatsApp or email. We advise on the best materials and formats for your budget.</div>
+    </div>
+    <div class="step-card reveal reveal-delay-1">
+      <div class="step-connector"></div>
+      <div class="step-num">02</div>
+      <div class="step-title">Design & Proof</div>
+      <div class="step-desc">Our design team creates a detailed digital mockup for your approval. No production begins until you're fully satisfied with the design proof.</div>
+    </div>
+    <div class="step-card reveal reveal-delay-2">
+      <div class="step-connector"></div>
+      <div class="step-num">03</div>
+      <div class="step-title">Factory Production</div>
+      <div class="step-desc">Your order runs at our dedicated Ilupeju manufacturing facility with quality control checkpoints at every stage of the process.</div>
+    </div>
+    <div class="step-card reveal reveal-delay-3">
+      <div class="step-num">04</div>
+      <div class="step-title">Packaged & Delivered</div>
+      <div class="step-desc">Orders are carefully packaged and dispatched. Lagos orders are hand-delivered; nationwide orders ship via trusted logistics partners.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="why" class="why-section section-pad">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+    <div>
+      <div class="eyebrow reveal"><div class="eyebrow-dot"></div>Why Choose Us</div>
+      <h2 class="section-h2 reveal reveal-delay-1">The 365 Pure Ocean <em>Advantage</em></h2>
+      <p class="section-sub reveal reveal-delay-2">We're more than a printer — we're your corporate stationery partner. Here's why leading Nigerian organizations trust us.</p>
+    </div>
+    <div></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">🌊</div>
+      <div>
+        <div class="why-title">Made in Nigeria, Built for the World</div>
+        <div class="why-desc">Our entire production chain is proudly local. We prove that Nigerian manufacturing can match and exceed the quality of any imported product.</div>
+      </div>
+    </div>
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon">✦</div>
+      <div>
+        <div class="why-title">Unlimited Customization</div>
+        <div class="why-desc">No brief is too complex. Custom sizes, specialty paper, foil embossing, multiple bindings, unique cover finishes — we handle it all in-house.</div>
+      </div>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon">🏭</div>
+      <div>
+        <div class="why-title">In-House Factory — Full Control</div>
+        <div class="why-desc">Our dedicated Ilupeju facility means zero outsourcing, zero quality gaps, and full accountability on every single order from start to finish.</div>
+      </div>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <div class="why-icon">🤝</div>
+      <div>
+        <div class="why-title">Trusted Corporate Partner</div>
+        <div class="why-desc">We serve organizations, SMEs, and enterprises with annual supply agreements, volume pricing, and a dedicated team for your account.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonial-section section-pad">
+  <div style="text-align:center; margin-bottom:3rem;">
+    <div class="eyebrow" style="justify-content:center; color:var(--gold);"><div class="eyebrow-dot" style="background:var(--gold);"></div>Client Testimonials</div>
+    <h2 class="section-h2 reveal" style="text-align:center;">What Our Clients Say</h2>
+  </div>
+  <div class="testi-inner">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"We've ordered our annual corporate diaries from 365 Pure Ocean for three consecutive years. The quality is indistinguishable from imported products — and the price is far better. Our clients always ask where we got them."</div>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Adebayo Okonkwo</div>
+          <div class="testi-role">CEO, Apex Financial Services Ltd. · Lagos</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-cards-stack">
+      <div class="testi-mini reveal reveal-delay-1">
+        <div class="testi-stars" style="font-size:0.85rem;">★★★★★</div>
+        <div class="testi-quote">"The custom gift sets for our end-of-year event were a hit. Premium packaging, beautiful notebooks — exactly what we wanted."</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="width:34px; height:34px; font-size:0.9rem;">F</div>
+          <div>
+            <div class="testi-name" style="font-size:0.82rem;">Fatima Abdullahi</div>
+            <div class="testi-role" style="font-size:0.68rem;">Brand Manager · TechCorp Nigeria</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-mini reveal reveal-delay-2">
+        <div class="testi-stars" style="font-size:0.85rem;">★★★★★</div>
+        <div class="testi-quote">"Fast turnaround, great communication on WhatsApp, and the delivery to Abuja was on time. Will definitely be ordering again."</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="width:34px; height:34px; font-size:0.9rem;">C</div>
+          <div>
+            <div class="testi-name" style="font-size:0.82rem;">Chukwuemeka Nwosu</div>
+            <div class="testi-role" style="font-size:0.68rem;">Office Manager · Nwosu & Associates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT / QUOTE ═══ -->
+<section id="contact" class="contact-section section-pad">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="eyebrow" style="color:var(--gold-l);"><div class="eyebrow-dot" style="background:var(--gold-l);"></div>Contact Us</div>
+      <h2 class="section-h2 reveal">Let's Create<br/><em>Something Great</em></h2>
+      <p class="section-sub reveal reveal-delay-1">Reach us on WhatsApp, email, or visit our office in Shomolu, Lagos — we're ready to bring your stationery vision to life.</p>
+      <div class="contact-details">
+        <div class="cd-item reveal">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="cd-label">Corporate HQ</div>
+            <div class="cd-val">No 15/18, Odunlade Street<br/>Shomolu, Onipanu, Lagos State</div>
+          </div>
+        </div>
+        <div class="cd-item reveal reveal-delay-1">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.32 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <div class="cd-label">Phone & WhatsApp</div>
+            <div class="cd-val"><a href="tel:+2349031500082">09031500082</a> &nbsp;·&nbsp; <a href="tel:09031500082" style="opacity:0.7;">09031500082</a></div>
+          </div>
+        </div>
+        <div class="cd-item reveal reveal-delay-2">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="cd-label">Email</div>
+            <div class="cd-val">
+              <a href="mailto:d2ands@hotmail.com">d2ands@hotmail.com</a><br/>
+              <a href="mailto:pureoceandiaries1976@gmail.com">pureoceandiaries1976@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="cd-item reveal reveal-delay-3">
+          <div class="cd-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div>
+            <div class="cd-label">Factory</div>
+            <div class="cd-val">Ilupeju, Lagos State, Nigeria</div>
+          </div>
+        </div>
+      </div>
+      <div class="socials reveal">
+        <a href="https://www.instagram.com/365.pureocean.diaries/" target="_blank" class="soc-btn">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a href="https://ng.linkedin.com/in/damilare-sodiq-9b27aa37" target="_blank" class="soc-btn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/2349031500082" target="_blank" class="soc-btn" style="border-color:rgba(37,211,102,0.3); color:rgba(37,211,102,0.7);">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.455 5.455 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/><path d="M12.05 1.5C6.22 1.5 1.5 6.22 1.5 12.05a10.53 10.53 0 0 0 1.42 5.14L1.5 22.5l5.42-1.39A10.5 10.5 0 0 0 12.05 22.6c5.83 0 10.55-4.72 10.55-10.55S17.88 1.5 12.05 1.5z" fill="currentColor"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <!-- QUOTE FORM -->
+    <div id="quote" class="reveal reveal-delay-1">
+      <div class="quote-form-box">
+        <div class="qf-title">Request a Quote</div>
+        <div class="qf-sub">Fill the form and we'll respond within 24 hours via WhatsApp or email.</div>
+        <form class="qform" onsubmit="submitQuote(event)">
+          <div class="qf-row">
+            <div class="qf-group">
+              <label class="qf-label">Your Name</label>
+              <input type="text" class="qf-input" placeholder="Full name" required/>
+            </div>
+            <div class="qf-group">
+              <label class="qf-label">Company / Brand</label>
+              <input type="text" class="qf-input" placeholder="Organization"/>
+            </div>
+          </div>
+          <div class="qf-group">
+            <label class="qf-label">Phone / WhatsApp</label>
+            <input type="tel" class="qf-input" placeholder="+234 ..." required/>
+          </div>
+          <div class="qf-group">
+            <label class="qf-label">Product Interested In</label>
+            <select class="qf-select qf-input">
+              <option value="">Select a product…</option>
+              <option>Corporate Diaries</option>
+              <option>Premium Notebooks</option>
+              <option>Personalized Journals</option>
+              <option>Branded Pads & Letterheads</option>
+              <option>Corporate Gift Sets</option>
+              <option>Commercial Printing</option>
+              <option>Other / Multiple Products</option>
+            </select>
+          </div>
+          <div class="qf-group">
+            <label class="qf-label">Order Details & Quantity</label>
+            <textarea class="qf-textarea" rows="4" placeholder="Describe your requirements, quantities, design ideas, and deadline…"></textarea>
+          </div>
+          <button type="submit" class="wa-submit">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.455 5.455 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 1.5C6.22 1.5 1.5 6.22 1.5 12.05a10.53 10.53 0 0 0 1.42 5.14L1.5 22.5l5.42-1.39A10.5 10.5 0 0 0 12.05 22.6c5.83 0 10.55-4.72 10.55-10.55S17.88 1.5 12.05 1.5z"/></svg>
+            Send via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <svg viewBox="0 0 36 36" fill="none" width="32" height="32">
+          <circle cx="18" cy="18" r="17" stroke="#C9A84C" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.4"/>
+          <path d="M5 21 Q10 15.5 15 21 Q20 26.5 25 21 Q30 15.5 31 21" stroke="#C9A84C" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M5 16.5 Q10 11 15 16.5 Q20 22 25 16.5 Q30 11 31 16.5" stroke="#3b82f6" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <text x="18" y="12.5" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="7.5" fill="#C9A84C" font-weight="600" letter-spacing="0.3">365</text>
+        </svg>
+        <div>
+          <div class="footer-brand-name">365 Pure Ocean Ltd.</div>
+          <div class="footer-brand-sub">Local Made Like Imported</div>
+        </div>
+      </div>
+      <p>Premium stationery manufacturing and commercial printing. Headquartered in Shomolu, Lagos — A D2&S Concepts Services Ltd. Group Company.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#products">Corporate Diaries</a></li>
+        <li><a href="#products">Premium Notebooks</a></li>
+        <li><a href="#products">Branded Journals</a></li>
+        <li><a href="#products">Gift Sets</a></li>
+        <li><a href="#products">Commercial Printing</a></li>
+        <li><a href="#products">Pads & Letterheads</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+2349031500082">09031500082</a></li>
+        <li><a href="tel:09031500082">09031500082</a></li>
+        <li><a href="mailto:d2ands@hotmail.com">d2ands@hotmail.com</a></li>
+        <li><a href="https://www.instagram.com/365.pureocean.diaries/" target="_blank">Instagram</a></li>
+        <li><a href="https://ng.linkedin.com/in/damilare-sodiq-9b27aa37" target="_blank">LinkedIn (CEO)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 365 Pure Ocean Ltd. · A D2&S Concepts Services Ltd. Group Company · All Rights Reserved.</div>
+    <div class="footer-tagline">"Local Made Like Imported"</div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/2349031500082?text=Hello%20365%20Pure%20Ocean%20Ltd.%2C%20I%20would%20like%20to%20enquire%20about%20your%20products." target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.455 5.455 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 1.5C6.22 1.5 1.5 6.22 1.5 12.05a10.53 10.53 0 0 0 1.42 5.14L1.5 22.5l5.42-1.39A10.5 10.5 0 0 0 12.05 22.6c5.83 0 10.55-4.72 10.55-10.55S17.88 1.5 12.05 1.5z"/></svg>
+</a>
+
+<script>
+// NAV scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.style.boxShadow = window.scrollY > 30 ? '0 2px 20px rgba(0,0,0,0.1)' : '0 1px 12px rgba(0,0,0,0.06)';
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Filter tabs (visual only)
+function filterTab(el) {
+  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Order single product via WhatsApp
+function orderWA(product) {
+  const msg = encodeURIComponent(`Hello 365 Pure Ocean Ltd., I'd like to order / get a quote for:\n\n📦 Product: ${product}\n\nPlease send me details and pricing. Thank you.`);
+  window.open(`https://wa.me/2349031500082?text=${msg}`, '_blank');
+}
+
+// Quote form submit
+function submitQuote(e) {
+  e.preventDefault();
+  const f = e.target;
+  const inputs = f.querySelectorAll('input, select, textarea');
+  const name = inputs[0].value;
+  const company = inputs[1].value;
+  const phone = inputs[2].value;
+  const product = inputs[3].value;
+  const details = inputs[4].value;
+  const msg = encodeURIComponent(
+    `Hello 365 Pure Ocean Ltd.,\n\nI'd like to request a quote.\n\n👤 Name: ${name}\n🏢 Company: ${company || 'N/A'}\n📞 Phone: ${phone}\n📦 Product: ${product || 'Not specified'}\n📝 Details: ${details || 'N/A'}\n\nThank you.`
+  );
+  window.open(`https://wa.me/2349031500082?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
