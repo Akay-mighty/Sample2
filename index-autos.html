@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Index Autos | Indexcomm Nigeria Services Ltd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122040;
+    --navy-light: #1a2f57;
+    --navy-border: #1e3a6e;
+    --gold: #f5a623;
+    --gold-light: #ffc55c;
+    --gold-dim: rgba(245,166,35,0.15);
+    --white: #ffffff;
+    --off-white: #f4f6fb;
+    --grey: #8a9bbf;
+    --grey-light: #d1d9ec;
+    --text: #cdd6ec;
+    --card-bg: #0f1e3d;
+    --card-border: rgba(30,58,110,0.7);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  img { display: block; max-width: 100%; }
+
+  /* ─── UTILITY ─── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .tag {
+    display: inline-block;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-dim);
+    border: 1px solid rgba(245,166,35,0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 13px 28px;
+    border-radius: 6px;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 12px 28px;
+    border-radius: 6px;
+    border: 1.5px solid var(--navy-border);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: var(--gold-dim); }
+
+  .section-header { text-align: center; margin-bottom: 52px; }
+  .section-header h2 { font-size: clamp(26px, 3.5vw, 40px); margin-bottom: 12px; }
+  .section-header p { color: var(--grey); max-width: 520px; margin: 0 auto; font-size: 15px; line-height: 1.7; }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    background: var(--navy-mid);
+    border-bottom: 1px solid var(--navy-border);
+    padding: 8px 0;
+    font-size: 12.5px;
+    color: var(--grey);
+  }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .topbar a { color: var(--gold); }
+  .topbar-notice { display: flex; align-items: center; gap: 6px; }
+  .topbar-notice span:first-child { color: var(--gold); font-size: 13px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(10,22,40,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--navy-border);
+    padding: 16px 0;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-icon {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 18px; color: var(--navy);
+    background: transparent;
+  }
+  .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+  .back-btn {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    background: var(--gold-dim);
+    border: 1px solid rgba(245,166,35,0.3);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    text-transform: uppercase;
+  }
+  .back-btn:hover { border-color: var(--gold); }
+  .back-btn.show { display: flex; }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-text strong { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--white); line-height: 1.1; }
+  .logo-text span { font-size: 10px; color: var(--grey); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--grey); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-phone {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Bebas Neue', cursive; font-weight: 400;
+    font-size: 14px; letter-spacing: 0.08em; color: var(--white);
+    background: var(--gold-dim);
+    border: 1px solid rgba(245,166,35,0.3);
+    padding: 9px 18px; border-radius: 6px;
+  }
+  .nav-phone svg { color: var(--gold); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; display: block; transition: 0.3s; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+    background: var(--navy);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 65% 50%, rgba(18,32,64,0.4) 0%, transparent 70%),
+      linear-gradient(135deg, rgba(10,22,40,0.3) 0%, rgba(10,22,40,0.2) 100%);
+    z-index: 1;
+  }
+  .hero-img {
+    position: absolute; inset: 0;
+    background: url('https://cdn.kord.live/serve/EJhikKqewDSF.jpg') center/cover no-repeat;
+    opacity: 0.50;
+  }
+  /* decorative grid */
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 1;
+    background-image: linear-gradient(rgba(30,58,110,0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30,58,110,0.12) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(245,166,35,0.3);
+    padding: 8px 18px; border-radius: 20px;
+    font-family: 'Bebas Neue', cursive; font-size: 12px; font-weight: 400; letter-spacing: 0.1em; color: var(--gold);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero h1 {
+    font-size: clamp(34px, 5vw, 66px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 20px;
+    max-width: 680px;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+
+  .hero p {
+    font-size: clamp(15px, 1.6vw, 17px);
+    color: var(--grey);
+    max-width: 540px;
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+
+  .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+  .hero-stat strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 900; color: var(--white);
+  }
+  .hero-stat small { font-size: 12px; color: var(--grey); letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* search bar */
+  .search-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: -32px;
+    position: relative; z-index: 10;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .search-bar h3 { font-size: 14px; font-weight: 400; color: var(--grey); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.12em; font-family: 'Bebas Neue', cursive; }
+  .search-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) 140px; gap: 10px; align-items: end; }
+  .search-field { display: flex; flex-direction: column; gap: 6px; }
+  .search-field label { font-size: 11px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.08em; }
+  .search-field input, .search-field select {
+    background: var(--navy);
+    border: 1px solid var(--navy-border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .search-field input:focus, .search-field select:focus { border-color: var(--gold); }
+  .search-field select option { background: var(--navy-mid); }
+
+  /* ─── CATEGORIES ─── */
+  .categories { padding: 60px 0; }
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+  .cat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+  .cat-card:hover { border-color: var(--gold); background: var(--gold-dim); transform: translateY(-3px); }
+  .cat-card .cat-icon { font-size: 28px; margin-bottom: 10px; }
+  .cat-card h4 { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .cat-card span { font-size: 11px; color: var(--grey); }
+
+  /* ─── LISTINGS ─── */
+  .listings { padding: 20px 0 80px; }
+  .listings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+  .listings-header h2 { font-size: 24px; }
+  .car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+  .car-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .car-card:hover { transform: translateY(-4px); border-color: rgba(245,166,35,0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+
+  .car-img {
+    position: relative; overflow: hidden;
+    height: 185px;
+    background: var(--navy-mid);
+  }
+  .car-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .car-card:hover .car-img img { transform: scale(1.04); }
+  .car-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--gold); color: var(--navy);
+    font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px; letter-spacing: 0.06em;
+  }
+  .car-badge.auction { background: #1e6ef5; color: #fff; }
+  .car-wish {
+    position: absolute; top: 12px; right: 12px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(10,22,40,0.8); border: 1px solid var(--navy-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .car-wish:hover { background: var(--gold-dim); }
+
+  .car-body { padding: 16px; }
+  .car-name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .car-type { font-size: 12px; color: var(--grey); margin-bottom: 12px; }
+  .car-specs { display: flex; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+  .car-spec { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--grey); }
+  .car-spec svg { flex-shrink: 0; }
+  .car-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--navy-border); }
+  .car-price { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--gold); }
+  .car-price small { font-size: 11px; font-weight: 400; color: var(--grey); display: block; }
+  .car-btn {
+    font-size: 12px; font-weight: 400; font-family: 'Bebas Neue', cursive;
+    color: var(--gold); border: 1px solid rgba(245,166,35,0.4);
+    background: var(--gold-dim); padding: 7px 14px; border-radius: 5px;
+    cursor: pointer; transition: background 0.2s; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .car-btn:hover { background: rgba(245,166,35,0.3); }
+
+  /* ─── WHY US ─── */
+  .why-us { padding: 80px 0; border-top: 1px solid var(--navy-border); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .why-visual {
+    position: relative;
+    background: var(--navy-mid);
+    border-radius: 16px; overflow: hidden;
+    height: 440px; border: 1px solid var(--card-border);
+  }
+  .why-visual img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+  .why-badge-a {
+    position: absolute; bottom: 24px; left: 24px;
+    background: var(--navy); border: 1px solid var(--navy-border);
+    border-radius: 10px; padding: 16px 20px;
+  }
+  .why-badge-a strong { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--gold); }
+  .why-badge-a span { font-size: 12px; color: var(--grey); display: block; }
+  .why-badge-b {
+    position: absolute; top: 24px; right: 24px;
+    background: var(--gold); border-radius: 10px; padding: 14px 18px;
+    text-align: center;
+  }
+  .why-badge-b strong { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 900; color: var(--navy); display: block; }
+  .why-badge-b span { font-size: 11px; color: var(--navy); font-weight: 600; }
+
+  .why-content h2 { font-size: clamp(24px, 3vw, 38px); margin-bottom: 16px; }
+  .why-content > p { color: var(--grey); line-height: 1.75; margin-bottom: 32px; }
+  .why-features { display: flex; flex-direction: column; gap: 18px; }
+  .why-feature { display: flex; gap: 16px; align-items: flex-start; }
+  .why-feature-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--gold-dim); border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .why-feature h4 { font-size: 15px; margin-bottom: 4px; }
+  .why-feature p { font-size: 13.5px; color: var(--grey); line-height: 1.6; }
+
+  /* ─── AUCTION PROCESS ─── */
+  .auction { padding: 80px 0; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+  .step {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 28px;
+    position: relative; overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .step:hover { border-color: rgba(245,166,35,0.4); }
+  .step-num {
+    font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 900;
+    color: rgba(245,166,35,0.07); position: absolute; top: -8px; right: 16px;
+    line-height: 1;
+  }
+  .step-icon { font-size: 26px; margin-bottom: 16px; }
+  .step h3 { font-size: 17px; margin-bottom: 8px; }
+  .step p { font-size: 13.5px; color: var(--grey); line-height: 1.65; }
+
+  /* Import form */
+  .import-form {
+    margin-top: 48px;
+    background: var(--card-bg);
+    border: 1px solid var(--navy-border);
+    border-radius: 16px; padding: 36px;
+  }
+  .import-form h3 { font-size: 20px; margin-bottom: 6px; }
+  .import-form > p { color: var(--grey); font-size: 14px; margin-bottom: 28px; }
+  .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 12px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.07em; }
+  .form-group input, .form-group select, .form-group textarea {
+    background: var(--navy);
+    border: 1px solid var(--navy-border);
+    border-radius: 7px; padding: 11px 14px;
+    color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 14px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-group select option { background: var(--navy-mid); }
+  .form-action { margin-top: 20px; }
+
+  /* ─── SOLAR ─── */
+  .solar { padding: 80px 0; border-top: 1px solid var(--navy-border); }
+  .solar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .solar-content h2 { font-size: clamp(24px, 3vw, 38px); margin-bottom: 14px; }
+  .solar-content > p { color: var(--grey); line-height: 1.75; margin-bottom: 32px; }
+  .solar-packages { display: flex; flex-direction: column; gap: 16px; }
+  .solar-pkg {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 10px; padding: 20px 22px;
+    transition: border-color 0.2s;
+  }
+  .solar-pkg:hover { border-color: rgba(245,166,35,0.4); }
+  .solar-pkg-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .solar-pkg h4 { font-size: 16px; }
+  .solar-pkg-badge {
+    font-size: 10px; font-weight: 400; font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 10px;
+    border-radius: 4px;
+  }
+  .pkg-basic { background: rgba(30,110,245,0.15); color: #6ba3ff; border: 1px solid rgba(30,110,245,0.3); }
+  .pkg-exec { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(245,166,35,0.3); }
+  .solar-pkg ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .solar-pkg li { font-size: 13px; color: var(--grey); display: flex; align-items: center; gap: 8px; }
+  .solar-pkg li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+  .solar-visual {
+    background: var(--navy-mid); border-radius: 16px;
+    border: 1px solid var(--card-border); overflow: hidden; height: 500px;
+    position: relative;
+  }
+  .solar-visual img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+  .solar-process {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.97) 60%, transparent);
+    padding: 28px;
+  }
+  .solar-process h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 14px; font-family: 'Bebas Neue', cursive; }
+  .process-steps { display: flex; flex-direction: column; gap: 8px; }
+  .process-step { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--grey); }
+  .process-step-num {
+    width: 22px; height: 22px; flex-shrink: 0;
+    background: var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', cursive; font-size: 10px; font-weight: 400; letter-spacing: 0.1em; color: var(--navy);
+  }
+
+  /* Load calculator */
+  .load-calc {
+    margin-top: 48px;
+    background: var(--card-bg); border: 1px solid var(--navy-border);
+    border-radius: 16px; padding: 36px;
+  }
+  .load-calc h3 { font-size: 20px; margin-bottom: 6px; }
+  .load-calc > p { color: var(--grey); font-size: 14px; margin-bottom: 28px; }
+  .appliance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .appliance-item {
+    background: var(--navy); border: 1.5px solid var(--navy-border);
+    border-radius: 8px; padding: 12px 14px;
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    user-select: none;
+  }
+  .appliance-item.selected { border-color: var(--gold); background: var(--gold-dim); }
+  .appliance-item .app-icon { font-size: 20px; }
+  .appliance-item span { font-size: 13px; font-weight: 500; }
+  .calc-result {
+    background: var(--navy); border: 1px solid var(--navy-border);
+    border-radius: 8px; padding: 16px 20px; display: none;
+    align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .calc-result.show { display: flex; }
+  .calc-result p { color: var(--grey); font-size: 13.5px; }
+  .calc-result strong { color: var(--gold); font-family: 'Syne', sans-serif; font-size: 18px; }
+
+  /* ─── DSTV ─── */
+  .dstv { padding: 60px 0; border-top: 1px solid var(--navy-border); }
+  .dstv-inner {
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    border: 1px solid var(--navy-border); border-radius: 16px; padding: 48px;
+    display: flex; align-items: center; gap: 48px; flex-wrap: wrap;
+  }
+  .dstv-icon { font-size: 56px; flex-shrink: 0; }
+  .dstv-content { flex: 1; min-width: 240px; }
+  .dstv-content h2 { font-size: clamp(22px, 2.5vw, 32px); margin-bottom: 12px; }
+  .dstv-content p { color: var(--grey); line-height: 1.7; margin-bottom: 24px; }
+  .dstv-features { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+  .dstv-feat { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); }
+  .dstv-feat::before { content: '●'; color: var(--gold); font-size: 8px; }
+
+  /* ─── TRUST / CONTACT ─── */
+  .contact { padding: 80px 0; border-top: 1px solid var(--navy-border); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: start; }
+  .contact-info h2 { font-size: clamp(24px, 3vw, 36px); margin-bottom: 16px; }
+  .contact-info > p { color: var(--grey); line-height: 1.75; margin-bottom: 32px; }
+  .contact-items { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+  .contact-item-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--gold-dim); border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .contact-item h4 { font-size: 13px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
+  .contact-item p { font-size: 15px; font-weight: 500; color: var(--white); }
+
+  .trust-banner {
+    background: linear-gradient(135deg, rgba(245,166,35,0.06), rgba(245,166,35,0.02));
+    border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 12px; padding: 22px 24px; margin-top: 32px;
+    display: flex; gap: 14px;
+  }
+  .trust-banner .shield { font-size: 26px; flex-shrink: 0; }
+  .trust-banner p { font-size: 13px; color: var(--grey); line-height: 1.65; }
+  .trust-banner strong { color: var(--gold); }
+
+  .contact-form-box {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 16px; padding: 36px;
+  }
+  .contact-form-box h3 { font-size: 22px; margin-bottom: 6px; }
+  .contact-form-box > p { color: var(--grey); font-size: 13.5px; margin-bottom: 28px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--navy-border);
+    padding: 56px 0 24px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  .footer-brand p { color: var(--grey); font-size: 13.5px; line-height: 1.7; margin: 16px 0 24px; max-width: 280px; }
+  .footer-socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 36px; height: 36px; border-radius: 6px;
+    background: var(--navy); border: 1px solid var(--navy-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; cursor: pointer; color: var(--grey);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col h4 { font-size: 13px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); margin-bottom: 18px; font-family: 'Bebas Neue', cursive; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col li a { font-size: 13.5px; color: var(--grey); transition: color 0.2s; }
+  .footer-col li a:hover { color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid var(--navy-border); padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+    font-size: 12.5px; color: var(--grey);
+  }
+  .footer-bottom span { color: var(--gold); }
+
+  /* ─── WHATSAPP FLOAT (enhanced) ─── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    display: flex; align-items: center; gap: 10px;
+    background: #25d366;
+    border-radius: 30px;
+    padding: 0 20px 0 0;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.5);
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none; overflow: hidden;
+  }
+  .wa-float:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
+  .wa-float-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #20c05a;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; flex-shrink: 0;
+    position: relative;
+  }
+  .wa-float-icon::before {
+    content: '';
+    position: absolute; inset: -4px;
+    border-radius: 50%; border: 2px solid rgba(37,211,102,0.5);
+    animation: wa-ring 2s infinite;
+  }
+  @keyframes wa-ring {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  .wa-float-label {
+    font-family: 'Bebas Neue', cursive; font-size: 13px; letter-spacing: 0.08em;
+    color: #fff; white-space: nowrap;
+  }
+
+  /* ─── FILTER BAR ─── */
+  .filter-bar {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 28px;
+  }
+  .filter-bar-top {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px; margin-bottom: 16px;
+  }
+  .filter-bar-top h3 { font-size: 13px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.1em; font-family: 'Bebas Neue', cursive; }
+  .filter-count { font-size: 12px; color: var(--gold); background: var(--gold-dim); border: 1px solid rgba(245,166,35,0.3); padding: 4px 12px; border-radius: 20px; }
+  .filter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; align-items: end; }
+  .filter-field { display: flex; flex-direction: column; gap: 6px; }
+  .filter-field label { font-size: 11px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.08em; }
+  .filter-field select, .filter-field input {
+    background: var(--navy); border: 1px solid var(--navy-border);
+    border-radius: 6px; padding: 9px 12px; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 13px;
+    outline: none; transition: border-color 0.2s; -webkit-appearance: none;
+  }
+  .filter-field select:focus, .filter-field input:focus { border-color: var(--gold); }
+  .filter-field select option { background: var(--navy-mid); }
+  .filter-reset {
+    font-family: 'Bebas Neue', cursive; font-size: 12px; letter-spacing: 0.08em;
+    color: var(--grey); background: transparent; border: 1px solid var(--navy-border);
+    border-radius: 6px; padding: 9px 16px; cursor: pointer; transition: color 0.2s, border-color 0.2s;
+    height: 38px; align-self: end;
+  }
+  .filter-reset:hover { color: var(--gold); border-color: rgba(245,166,35,0.4); }
+
+  /* Price slider */
+  .price-slider-wrap { grid-column: span 2; }
+  .price-slider-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--grey); margin-top: 6px; }
+  .price-slider-val { color: var(--gold); font-weight: 600; }
+  input[type=range] {
+    -webkit-appearance: none; width: 100%; height: 4px;
+    background: var(--navy-border); border-radius: 2px; outline: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--gold); cursor: pointer; border: 2px solid var(--navy);
+    box-shadow: 0 0 6px rgba(245,166,35,0.4);
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--gold); cursor: pointer; border: 2px solid var(--navy);
+  }
+
+  /* No results */
+  .no-results {
+    grid-column: 1/-1; text-align: center; padding: 60px 24px;
+    color: var(--grey); font-size: 14px;
+  }
+  .no-results strong { display: block; font-size: 18px; color: var(--white); margin-bottom: 8px; }
+
+  /* ─── CAR REQUEST PANEL ─── */
+  .car-request {
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgba(245,166,35,0.06), rgba(245,166,35,0.02));
+    border: 1px solid rgba(245,166,35,0.25);
+    border-radius: 16px; padding: 40px;
+  }
+  .car-request-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
+  .car-request-icon { font-size: 36px; flex-shrink: 0; }
+  .car-request-header h3 { font-size: clamp(18px, 2.5vw, 24px); margin-bottom: 6px; }
+  .car-request-header p { color: var(--grey); font-size: 13.5px; line-height: 1.65; }
+  .car-request-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+  .car-request-grid .form-group label { font-size: 11px; }
+  .cr-note { grid-column: 1/-1; }
+  .car-request-action { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .car-request-action small { color: var(--grey); font-size: 12px; }
+
+  /* Active filter chips */
+  .active-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .filter-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--gold);
+    background: var(--gold-dim); border: 1px solid rgba(245,166,35,0.3);
+    padding: 4px 10px; border-radius: 20px;
+  }
+
+  /* ─── PAGE SECTIONS ─── */
+  .page-section { display: none; }
+  .page-section.active { display: block; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 900px) {
+    .why-grid, .solar-grid, .contact-grid { grid-template-columns: 1fr; }
+    .why-visual, .solar-visual { height: 280px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links, .nav-actions { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 0;
+      background: var(--navy-mid); border-bottom: 1px solid var(--navy-border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 14px 24px; border-bottom: 1px solid var(--navy-border); font-size: 15px; color: var(--white); display: block; }
+    .search-grid { grid-template-columns: 1fr 1fr; }
+    .dstv-inner { padding: 28px; }
+  }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    .search-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-notice">
+      <span>🔒</span>
+      <span>Official line: <a href="tel:08066159566">08066159566</a> — Always verify before sending any payment.</span>
+    </div>
+    <span>Indexcomm Nigeria Services Ltd · Verified Corporate Entity</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-icon"><img src="https://cdn.kord.live/serve/BJcQCEzWIfqA.jpg" alt="Index Autos Logo"></div>
+        <div class="logo-text">
+          <strong>Index Autos</strong>
+          <span>Indexcomm Nigeria Services Ltd</span>
+        </div>
+      </div>
+      <button class="back-btn" id="backBtn" onclick="backHome()">← Back Home</button>
+      <ul class="nav-links">
+        <li><a href="#" class="active" onclick="showPage('home',this)">Home</a></li>
+        <li><a href="#" onclick="showPage('autos',this)">Auto Hub</a></li>
+        <li><a href="#" onclick="showPage('solar',this)">Solar Energy</a></li>
+        <li><a href="#" onclick="showPage('contact',this)">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:08066159566" class="nav-phone">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          08066159566
+        </a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="showPage('home',this);toggleMenu()">Home</a>
+    <a href="#" onclick="showPage('autos',this);toggleMenu()">Auto Hub</a>
+    <a href="#" onclick="showPage('solar',this);toggleMenu()">Solar Energy</a>
+    <a href="#" onclick="showPage('contact',this);toggleMenu()">Contact</a>
+    <a href="tel:08066159566" style="color:var(--gold)">📞 08066159566</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ HOME PAGE ══════════════════ -->
+<div id="page-home" class="page-section active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-img"></div>
+    <div class="hero-grid"></div>
+    <div class="container hero-content">
+      <div class="hero-badge"><span></span> Nigeria's Trusted Auto & Energy Partner</div>
+      <h1>Premium Car Importation &amp; <em>Clean Solar</em> Energy Engineering.</h1>
+      <p>Welcome to Indexcomm Nigeria Services Ltd. We deliver trust, quality, and transparent value across automobile logistics and renewable energy frameworks.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="showPage('autos',null)">
+          🚘 Browse Car Inventory
+        </button>
+        <button class="btn-outline" onclick="showPage('solar',null)">
+          ⚡ Get Solar Estimate
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>150+</strong><small>Vehicles Imported</small></div>
+        <div class="hero-stat"><strong>80+</strong><small>Solar Installs</small></div>
+        <div class="hero-stat"><strong>100%</strong><small>Verified Auctions</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Bar -->
+  <div class="container">
+    <div class="search-bar reveal">
+      <h3>🔍 Find Your Vehicle</h3>
+      <div class="search-grid">
+        <div class="search-field">
+          <label>Brand</label>
+          <select id="hs-brand"><option value="">All Brands</option><option>Toyota</option><option>Honda</option><option>Mercedes-Benz</option><option>BMW</option><option>Lexus</option><option>Ford</option><option>Hyundai</option></select>
+        </div>
+        <div class="search-field">
+          <label>Model</label>
+          <input type="text" id="hs-model" placeholder="e.g. Camry, Civic…">
+        </div>
+        <div class="search-field">
+          <label>Year</label>
+          <select id="hs-year"><option value="">Any Year</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option></select>
+        </div>
+        <div class="search-field">
+          <label>Budget (₦)</label>
+          <select id="hs-budget"><option value="">Any Budget</option><option>Under ₦5M</option><option>₦5M – ₦10M</option><option>₦10M – ₦20M</option><option>₦20M+</option></select>
+        </div>
+        <button class="btn-primary" style="height:42px;align-self:end" onclick="heroSearch()">Search →</button>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn-outline" style="font-size:12px;padding:7px 16px;height:auto" onclick="heroSearchWA()">📲 Send Search to WhatsApp</button>
+        <span style="font-size:12px;color:var(--grey);align-self:center">— or browse our full inventory</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag">Browse by Type</div>
+        <h2>Explore Vehicle Categories</h2>
+      </div>
+      <div class="cat-grid reveal">
+        <div class="cat-card"><div class="cat-icon">🚗</div><h4>Sedan</h4><span>12 Listings</span></div>
+        <div class="cat-card"><div class="cat-icon">🚙</div><h4>SUV</h4><span>18 Listings</span></div>
+        <div class="cat-card"><div class="cat-icon">🚐</div><h4>Van / Bus</h4><span>5 Listings</span></div>
+        <div class="cat-card"><div class="cat-icon">🛻</div><h4>Pick-Up</h4><span>7 Listings</span></div>
+        <div class="cat-card"><div class="cat-icon">🏎️</div><h4>Coupe</h4><span>4 Listings</span></div>
+        <div class="cat-card"><div class="cat-icon">🚌</div><h4>Hatchback</h4><span>9 Listings</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Listings -->
+  <section class="listings">
+    <div class="container">
+      <div class="listings-header reveal">
+        <h2>Featured Vehicles</h2>
+        <button class="btn-outline" onclick="showPage('autos',null)">View All Cars →</button>
+      </div>
+      <div class="car-grid" id="homeCarGrid"></div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="why-us">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-visual reveal">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80" alt="Cars at port">
+          <div class="why-badge-a"><strong>10+</strong><span>Years in business</span></div>
+          <div class="why-badge-b"><strong>100%</strong><span>Transparent</span></div>
+        </div>
+        <div class="why-content reveal">
+          <div class="tag">Why Index Autos</div>
+          <h2>Want to buy or import a vehicle?</h2>
+          <p>At Indexcomm Nigeria Services Ltd, we take the complexity out of vehicle procurement. Whether you need a verified Tokunbo car or want to bid live on international auctions, we guide you every step of the way.</p>
+          <div class="why-features">
+            <div class="why-feature">
+              <div class="why-feature-icon">🔍</div>
+              <div>
+                <h4>Verified Tokunbo Stock</h4>
+                <p>Every foreign-used vehicle is inspected and documented before listing — no surprises on delivery.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-icon">🌍</div>
+              <div>
+                <h4>Live International Auction Access</h4>
+                <p>Direct bidding support from trusted global auto auction platforms with full cost transparency.</p>
+              </div>
+            </div>
+            <div class="why-feature">
+              <div class="why-feature-icon">🛃</div>
+              <div>
+                <h4>End-to-End Clearing</h4>
+                <p>We track shipping from international ports straight through Nigerian Customs clearance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section style="padding:60px 0; border-top:1px solid var(--navy-border);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag">All Services</div>
+        <h2>Everything We Offer</h2>
+        <p>From premium vehicle importation to solar engineering and satellite installations — one trusted partner for your needs.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px" class="reveal">
+        <div class="step" onclick="showPage('autos',null)" style="cursor:pointer">
+          <div class="step-num">01</div>
+          <div class="step-icon">🚘</div>
+          <h3>Car Sales</h3>
+          <p>Verified foreign-used Tokunbo vehicles at transparent, competitive prices. No hidden fees.</p>
+        </div>
+        <div class="step" onclick="showPage('autos',null)" style="cursor:pointer">
+          <div class="step-num">02</div>
+          <div class="step-icon">🌐</div>
+          <h3>Auction Bidding</h3>
+          <p>Direct transparent bidding support from trusted global auto auction platforms worldwide.</p>
+        </div>
+        <div class="step" onclick="showPage('solar',null)" style="cursor:pointer">
+          <div class="step-num">03</div>
+          <div class="step-icon">☀️</div>
+          <h3>Solar Engineering</h3>
+          <p>Highly efficient backup solutions for homes and offices — custom-engineered for your load.</p>
+        </div>
+        <div class="step" onclick="showPage('solar',null)" style="cursor:pointer">
+          <div class="step-num">04</div>
+          <div class="step-icon">📡</div>
+          <h3>DSTV & Networking</h3>
+          <p>Professional local network infrastructure and satellite dish setup services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ══════════════════ AUTO HUB PAGE ══════════════════ -->
+<div id="page-autos" class="page-section">
+  <div style="background:linear-gradient(135deg,var(--navy-mid),var(--navy));padding:64px 0 40px;border-bottom:1px solid var(--navy-border);">
+    <div class="container">
+      <div class="tag">Auto Hub</div>
+      <h1 style="font-size:clamp(28px,4vw,52px);margin-bottom:12px">Vehicle Importation &amp; Sales</h1>
+      <p style="color:var(--grey);max-width:560px;line-height:1.7">Browse our verified Tokunbo inventory or start a live auction bid. Every transaction is transparent, documented, and backed by our corporate guarantee.</p>
+    </div>
+  </div>
+
+  <section style="padding:60px 0;">
+    <div class="container">
+      <div class="listings-header reveal">
+        <h2>Available Stock</h2>
+        <div class="tag" style="margin:0">Verified Tokunbo</div>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar reveal">
+        <div class="filter-bar-top">
+          <h3>🔧 Filter Vehicles</h3>
+          <span class="filter-count" id="filterCount">8 vehicles</span>
+        </div>
+        <div class="filter-grid">
+          <div class="filter-field">
+            <label>Brand</label>
+            <select id="f-brand" onchange="applyFilters()">
+              <option value="">All Brands</option>
+              <option>Toyota</option><option>Honda</option><option>Mercedes-Benz</option>
+              <option>BMW</option><option>Lexus</option><option>Ford</option><option>Hyundai</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label>Type</label>
+            <select id="f-type" onchange="applyFilters()">
+              <option value="">All Types</option>
+              <option>Sedan</option><option>SUV</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label>Year</label>
+            <select id="f-year" onchange="applyFilters()">
+              <option value="">Any Year</option>
+              <option>2022</option><option>2021</option><option>2020</option><option>2019</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label>Badge</label>
+            <select id="f-badge" onchange="applyFilters()">
+              <option value="">All Stock</option>
+              <option>Tokunbo</option><option>Auction</option>
+            </select>
+          </div>
+          <div class="filter-field price-slider-wrap">
+            <label>Max Budget: <span class="price-slider-val" id="sliderDisplay">₦20M+</span></label>
+            <input type="range" id="f-price" min="5" max="25" value="25" step="1" oninput="applyFilters()">
+            <div class="price-slider-labels"><span>₦5M</span><span>₦10M</span><span>₦15M</span><span>₦20M+</span></div>
+          </div>
+          <button class="filter-reset" onclick="resetFilters()">✕ Reset</button>
+        </div>
+        <div class="active-filters" id="activeFilters"></div>
+      </div>
+
+      <div class="car-grid" id="autosCarGrid"></div>
+
+      <!-- CAR REQUEST PANEL -->
+      <div class="car-request reveal" id="carRequestPanel">
+        <div class="car-request-header">
+          <div class="car-request-icon">🔍</div>
+          <div>
+            <h3>Can't Find the Car You Want?</h3>
+            <p>Tell us exactly what you're looking for — brand, model, year, colour, budget. We'll source it from international auctions and get back to you with options and full cost breakdown.</p>
+          </div>
+        </div>
+        <div class="car-request-grid">
+          <div class="form-group"><label>Your Name</label><input type="text" id="cr-name" placeholder="Full name"></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="cr-phone" placeholder="08012345678"></div>
+          <div class="form-group">
+            <label>Car Brand</label>
+            <select id="cr-brand">
+              <option value="">Select Brand</option>
+              <option>Toyota</option><option>Honda</option><option>Mercedes-Benz</option>
+              <option>BMW</option><option>Lexus</option><option>Ford</option><option>Hyundai</option>
+              <option>Kia</option><option>Nissan</option><option>Volkswagen</option>
+              <option>Audi</option><option>Range Rover</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Model</label><input type="text" id="cr-model" placeholder="e.g. Camry, Prado, GLE…"></div>
+          <div class="form-group">
+            <label>Preferred Year</label>
+            <select id="cr-year">
+              <option value="">Any Year</option>
+              <option>2024</option><option>2023</option><option>2022</option>
+              <option>2021</option><option>2020</option><option>2019</option><option>2018</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Budget (₦)</label>
+            <select id="cr-budget">
+              <option value="">Select Budget</option>
+              <option>Under ₦5M</option><option>₦5M – ₦10M</option>
+              <option>₦10M – ₦15M</option><option>₦15M – ₦20M</option>
+              <option>₦20M – ₦30M</option><option>₦30M+</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Preferred Colour</label><input type="text" id="cr-color" placeholder="e.g. White, Black, Silver"></div>
+          <div class="form-group">
+            <label>Transmission</label>
+            <select id="cr-trans">
+              <option value="">Any</option>
+              <option>Automatic</option><option>Manual</option>
+            </select>
+          </div>
+          <div class="form-group cr-note">
+            <label>Additional Notes</label>
+            <textarea id="cr-notes" placeholder="Any specific requirements — trim level, mileage preference, sunroof, 4WD, etc." style="min-height:80px"></textarea>
+          </div>
+        </div>
+        <div class="car-request-action">
+          <button class="btn-primary" onclick="submitCarRequest()">📲 Send Request via WhatsApp</button>
+          <small>We typically respond within 1–2 hours on WhatsApp</small>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Auction Process -->
+  <section class="auction">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag">International Auction Portal</div>
+        <h2>How the Auction Process Works</h2>
+        <p>We give you direct access to live overseas auctions — with full transparency from selection to delivery at your door.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-icon">🔎</div>
+          <h3>Choose Your Car</h3>
+          <p>Select vehicles from live overseas auction catalogs. We help you filter by brand, model, year, mileage, and condition.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-icon">💳</div>
+          <h3>Fund &amp; Bid</h3>
+          <p>Secure a verified bid with fully transparent cost breakdowns — no hidden charges, no surprises.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-icon">🛃</div>
+          <h3>Import &amp; Clear</h3>
+          <p>We track shipping from international ports straight through Nigerian Customs clearance to your location.</p>
+        </div>
+      </div>
+
+      <div class="import-form reveal">
+        <h3>What car are you looking to import?</h3>
+        <p>Fill in the details below and we'll reach out with auction options and cost breakdown.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="08012345678">
+          </div>
+          <div class="form-group">
+            <label>Car Brand</label>
+            <select><option>Toyota</option><option>Honda</option><option>Mercedes-Benz</option><option>BMW</option><option>Lexus</option><option>Ford</option><option>Other</option></select>
+          </div>
+          <div class="form-group">
+            <label>Model</label>
+            <input type="text" placeholder="e.g. Camry, Accord…">
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <select><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option></select>
+          </div>
+          <div class="form-group">
+            <label>Budget (₦)</label>
+            <select><option>Under ₦5M</option><option>₦5M – ₦10M</option><option>₦10M – ₦20M</option><option>₦20M+</option></select>
+          </div>
+          <div class="form-group" style="grid-column:1/-1">
+            <label>Additional Notes</label>
+            <textarea placeholder="Any specific requirements, colour, trim level, etc."></textarea>
+          </div>
+        </div>
+        <div class="form-action">
+          <a href="https://wa.me/2348066159566?text=Hi%20Index%20Autos%2C%20I%20want%20to%20import%20a%20car" target="_blank" class="btn-primary">
+            📲 Send via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-autos -->
+
+
+<!-- ══════════════════ SOLAR PAGE ══════════════════ -->
+<div id="page-solar" class="page-section">
+  <div style="background:linear-gradient(135deg,var(--navy-mid),var(--navy));padding:64px 0 40px;border-bottom:1px solid var(--navy-border);">
+    <div class="container">
+      <div class="tag">Solar Energy</div>
+      <h1 style="font-size:clamp(28px,4vw,52px);margin-bottom:12px">Solar &amp; Sustainable Engineering</h1>
+      <p style="color:var(--grey);max-width:560px;line-height:1.7">Custom solar and inverter installations engineered for Nigerian homes and businesses. Escape grid dependency with a system built precisely for your load.</p>
+    </div>
+  </div>
+
+  <section class="solar">
+    <div class="container">
+      <div class="solar-grid">
+        <div class="solar-content reveal">
+          <div class="tag">Installation Packages</div>
+          <h2>Inverter Systems &amp; Engineering</h2>
+          <p>We design and install custom solar frameworks tailored to your exact power needs — from basic home backup to full heavy-load commercial systems.</p>
+          <div class="solar-packages">
+            <div class="solar-pkg">
+              <div class="solar-pkg-header">
+                <h4>Basic Home Package</h4>
+                <span class="solar-pkg-badge pkg-basic">Starter</span>
+              </div>
+              <ul>
+                <li>LED lighting circuits</li>
+                <li>Ceiling fans (up to 4 units)</li>
+                <li>Smart TVs and decoders</li>
+                <li>Phone and device charging</li>
+                <li>Small routers and modems</li>
+              </ul>
+            </div>
+            <div class="solar-pkg">
+              <div class="solar-pkg-header">
+                <h4>Executive Premium Package</h4>
+                <span class="solar-pkg-badge pkg-exec">Premium</span>
+              </div>
+              <ul>
+                <li>Full lighting and fans</li>
+                <li>Refrigerators and deep freezers</li>
+                <li>Water pumping machines</li>
+                <li>Air conditioning units (split ACs)</li>
+                <li>Office and commercial equipment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="solar-visual reveal">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80" alt="Solar panels">
+          <div class="solar-process">
+            <h4>Engineering Process</h4>
+            <div class="process-steps">
+              <div class="process-step"><div class="process-step-num">1</div>Technical site survey & load audit</div>
+              <div class="process-step"><div class="process-step-num">2</div>Precision panel positioning design</div>
+              <div class="process-step"><div class="process-step-num">3</div>Professional battery safety installation</div>
+              <div class="process-step"><div class="process-step-num">4</div>System commissioning & handover</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load Calculator -->
+      <div class="load-calc reveal">
+        <h3>⚡ Calculate Your Load</h3>
+        <p>Select the appliances you need to power to receive a preliminary solar engineering estimate.</p>
+        <div class="appliance-grid" id="applianceGrid">
+          <div class="appliance-item" data-watts="15" onclick="toggleApp(this)"><span class="app-icon">💡</span><span>LED Lights (×5)</span></div>
+          <div class="appliance-item" data-watts="75" onclick="toggleApp(this)"><span class="app-icon">💨</span><span>Ceiling Fan</span></div>
+          <div class="appliance-item" data-watts="150" onclick="toggleApp(this)"><span class="app-icon">📺</span><span>Smart TV</span></div>
+          <div class="appliance-item" data-watts="150" onclick="toggleApp(this)"><span class="app-icon">📡</span><span>DSTV / Router</span></div>
+          <div class="appliance-item" data-watts="400" onclick="toggleApp(this)"><span class="app-icon">🥶</span><span>Refrigerator</span></div>
+          <div class="appliance-item" data-watts="750" onclick="toggleApp(this)"><span class="app-icon">💧</span><span>Water Pump</span></div>
+          <div class="appliance-item" data-watts="1500" onclick="toggleApp(this)"><span class="app-icon">❄️</span><span>1.5HP Split AC</span></div>
+          <div class="appliance-item" data-watts="2500" onclick="toggleApp(this)"><span class="app-icon">❄️</span><span>2HP Split AC</span></div>
+          <div class="appliance-item" data-watts="1000" onclick="toggleApp(this)"><span class="app-icon">🖨️</span><span>Office Equipment</span></div>
+          <div class="appliance-item" data-watts="600" onclick="toggleApp(this)"><span class="app-icon">🧊</span><span>Deep Freezer</span></div>
+        </div>
+        <div class="calc-result" id="calcResult">
+          <p>Estimated Load: <strong id="calcWatts">0W</strong> — Recommended: <strong id="calcPkg">—</strong></p>
+          <a href="https://wa.me/2348066159566?text=Hi%2C%20I%20need%20a%20solar%20estimate" target="_blank" class="btn-primary" style="font-size:13px;padding:10px 20px">Get Full Quote →</a>
+        </div>
+        <button class="btn-outline" onclick="openSolarWA()" style="font-size:13px;padding:10px 22px">📲 Request Full Engineering Estimate</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DSTV & Networking -->
+  <section class="dstv">
+    <div class="container">
+      <div class="dstv-inner reveal">
+        <div class="dstv-icon">📡</div>
+        <div class="dstv-content">
+          <div class="tag" style="margin-bottom:12px">Add-On Service</div>
+          <h2>DSTV &amp; Network Installations</h2>
+          <p>Professional local network infrastructure and satellite dish installation. We handle alignment, cabling, and decoder configuration for residential and commercial setups.</p>
+          <div class="dstv-features">
+            <div class="dstv-feat">DSTV Dish Alignment</div>
+            <div class="dstv-feat">LNB & Decoder Setup</div>
+            <div class="dstv-feat">LAN & WiFi Infrastructure</div>
+            <div class="dstv-feat">Commercial Network Cabling</div>
+          </div>
+          <a href="https://wa.me/2348066159566?text=Hi%2C%20I%20need%20DSTV%20or%20network%20installation" target="_blank" class="btn-primary">📲 Book Installation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-solar -->
+
+
+<!-- ══════════════════ CONTACT PAGE ══════════════════ -->
+<div id="page-contact" class="page-section">
+  <div style="background:linear-gradient(135deg,var(--navy-mid),var(--navy));padding:64px 0 40px;border-bottom:1px solid var(--navy-border);">
+    <div class="container">
+      <div class="tag">Contact & Verification</div>
+      <h1 style="font-size:clamp(28px,4vw,52px);margin-bottom:12px">Get in Touch</h1>
+      <p style="color:var(--grey);max-width:500px;line-height:1.7">Reach us through our official verified channel. Please verify you are speaking with us before making any payments.</p>
+    </div>
+  </div>
+
+  <section class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="tag">Direct Contact</div>
+          <h2>Official Contact Information</h2>
+          <p>We are Indexcomm Nigeria Services Ltd, operating as Index Autos. Always confirm you are in direct contact with us through our official channel before any transaction.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <h4>Phone / WhatsApp</h4>
+                <p><a href="tel:08066159566" style="color:var(--gold)">08066159566</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🏢</div>
+              <div>
+                <h4>Registered Name</h4>
+                <p>Indexcomm Nigeria Services Ltd</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🚘</div>
+              <div>
+                <h4>Operating Brand</h4>
+                <p>Index Autos</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">⚡</div>
+              <div>
+                <h4>Services</h4>
+                <p>Vehicle Importation · Solar Engineering · DSTV & Networking</p>
+              </div>
+            </div>
+          </div>
+          <div class="trust-banner">
+            <span class="shield">🔒</span>
+            <p><strong>Security Notice:</strong> Indexcomm Nigeria Services Ltd conducts financial transactions strictly via our official registered corporate bank accounts. Always confirm you are communicating directly with us through our official verified channel at <strong>08066159566</strong> before processing any procurement or logistics fees.</p>
+          </div>
+        </div>
+
+        <div class="contact-form-box reveal">
+          <h3>Send Us a Message</h3>
+          <p>Fill in your details and we'll get back to you promptly.</p>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your full name" id="cf-name">
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" placeholder="City / State" id="cf-loc">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="08012345678" id="cf-phone">
+            </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="cf-service">
+                <option>Vehicle Purchase (Tokunbo)</option>
+                <option>International Auction Bid</option>
+                <option>Solar / Inverter Installation</option>
+                <option>DSTV / Network Setup</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message / Notes</label>
+              <textarea placeholder="Describe your needs…" id="cf-msg"></textarea>
+            </div>
+            <button class="btn-primary" onclick="submitContact()" style="width:100%;justify-content:center">
+              📲 Send via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /page-contact -->
+
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon"><img src="https://cdn.kord.live/serve/BJcQCEzWIfqA.jpg" alt="Index Autos Logo"></div>
+          <div class="logo-text">
+            <strong>Index Autos</strong>
+            <span>Indexcomm Nigeria Services Ltd</span>
+          </div>
+        </div>
+        <p>Nigeria's trusted partner for premium vehicle importation, international auction bidding, solar energy engineering, and professional satellite installations.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/2348066159566" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+          <span class="social-btn" title="Facebook">f</span>
+          <span class="social-btn" title="Instagram">◉</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Auto Hub</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('autos',null)">Tokunbo Vehicles</a></li>
+          <li><a href="#" onclick="showPage('autos',null)">Auction Bidding</a></li>
+          <li><a href="#" onclick="showPage('autos',null)">Import Process</a></li>
+          <li><a href="#" onclick="showPage('autos',null)">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Solar Energy</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('solar',null)">Home Packages</a></li>
+          <li><a href="#" onclick="showPage('solar',null)">Commercial Solar</a></li>
+          <li><a href="#" onclick="showPage('solar',null)">Load Calculator</a></li>
+          <li><a href="#" onclick="showPage('solar',null)">DSTV & Networking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:08066159566">📞 08066159566</a></li>
+          <li><a href="https://wa.me/2348066159566" target="_blank">💬 WhatsApp Us</a></li>
+          <li><a href="#" onclick="showPage('contact',null)">Verification Info</a></li>
+          <li><a href="#" onclick="showPage('contact',null)">Corporate Details</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 <span>Indexcomm Nigeria Services Ltd</span>. All rights reserved.</span>
+      <span>Official Line: <span>08066159566</span> — Verify before you pay.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/2348066159566?text=Hi%20Index%20Autos%2C%20I%27m%20interested%20in%20your%20services." target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <div class="wa-float-icon">💬</div>
+  <span class="wa-float-label">Chat With Us</span>
+</a>
+
+
+<script>
+// ── CAR DATA ──
+const cars = [
+  { id:1, name:'Toyota Camry', type:'Sedan', year:'2020', engine:'2.5L 4-Cyl', trans:'Automatic', miles:'32,000 km', fuel:'Petrol', price:'₦7.2M', badge:'Tokunbo', img:'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=600&q=80' },
+  { id:2, name:'Honda CR-V', type:'SUV', year:'2021', engine:'1.5T 4-Cyl', trans:'CVT', miles:'28,000 km', fuel:'Petrol', price:'₦9.5M', badge:'Tokunbo', img:'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80' },
+  { id:3, name:'Lexus RX 350', type:'SUV', year:'2019', engine:'3.5L V6', trans:'Automatic', miles:'44,000 km', fuel:'Petrol', price:'₦14.8M', badge:'Tokunbo', img:'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=600&q=80' },
+  { id:4, name:'Mercedes-Benz C300', type:'Sedan', year:'2020', engine:'2.0T 4-Cyl', trans:'Automatic', miles:'37,000 km', fuel:'Petrol', price:'₦16.5M', badge:'Auction', img:'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80' },
+  { id:5, name:'Toyota Highlander', type:'SUV', year:'2022', engine:'3.5L V6', trans:'Automatic', miles:'18,000 km', fuel:'Petrol', price:'₦19.2M', badge:'Tokunbo', img:'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=600&q=80' },
+  { id:6, name:'Ford Explorer', type:'SUV', year:'2020', engine:'2.3T 4-Cyl', trans:'Automatic', miles:'55,000 km', fuel:'Petrol', price:'₦11.4M', badge:'Auction', img:'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&q=80' },
+  { id:7, name:'BMW 3 Series', type:'Sedan', year:'2021', engine:'2.0T 4-Cyl', trans:'Automatic', miles:'29,000 km', fuel:'Petrol', price:'₦17.8M', badge:'Auction', img:'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80' },
+  { id:8, name:'Hyundai Tucson', type:'SUV', year:'2022', engine:'2.5L 4-Cyl', trans:'Automatic', miles:'15,000 km', fuel:'Petrol', price:'₦8.9M', badge:'Tokunbo', img:'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=600&q=80' },
+];
+
+function carCardHTML(c) {
+  return `<div class="car-card reveal">
+    <div class="car-img">
+      <img src="${c.img}" alt="${c.name}" loading="lazy">
+      <span class="car-badge ${c.badge==='Auction'?'auction':''}">${c.badge}</span>
+      <div class="car-wish">♡</div>
+    </div>
+    <div class="car-body">
+      <div class="car-name">${c.name} <small style="font-size:12px;font-weight:400;color:var(--grey)">${c.year}</small></div>
+      <div class="car-type">${c.type}</div>
+      <div class="car-specs">
+        <span class="car-spec"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>${c.miles}</span>
+        <span class="car-spec"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 13l4-4 4 4 4-4 4 4"/></svg>${c.trans}</span>
+        <span class="car-spec">⛽ ${c.fuel}</span>
+      </div>
+      <div class="car-footer">
+        <div class="car-price">${c.price}<small>Negotiable</small></div>
+        <a href="https://wa.me/2348066159566?text=Hi%2C%20I%27m%20interested%20in%20the%20${encodeURIComponent(c.name+' '+c.year)}" target="_blank" class="car-btn">Request Tour</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── PRICE LOOKUP (extract numeric value in millions) ──
+function priceToNum(p) {
+  const m = p.replace(/[₦,M]/g,'').trim();
+  return parseFloat(m);
+}
+
+// ── RENDER ──
+document.getElementById('homeCarGrid').innerHTML = cars.slice(0,4).map(carCardHTML).join('');
+renderAutosGrid(cars);
+
+function renderAutosGrid(filtered) {
+  const grid = document.getElementById('autosCarGrid');
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="no-results"><strong>No vehicles match your filters</strong>Try adjusting the filters above, or use the request form below to tell us what you need.</div>`;
+  } else {
+    grid.innerHTML = filtered.map(carCardHTML).join('');
+  }
+  document.getElementById('filterCount').textContent = filtered.length + ' vehicle' + (filtered.length !== 1 ? 's' : '');
+  setTimeout(initReveal, 50);
+}
+
+// ── FILTERS ──
+function applyFilters() {
+  const brand = document.getElementById('f-brand').value;
+  const type  = document.getElementById('f-type').value;
+  const year  = document.getElementById('f-year').value;
+  const badge = document.getElementById('f-badge').value;
+  const maxPrice = parseInt(document.getElementById('f-price').value);
+
+  // Update slider label
+  const sliderEl = document.getElementById('sliderDisplay');
+  sliderEl.textContent = maxPrice >= 25 ? '₦20M+' : '₦' + maxPrice + 'M';
+
+  const filtered = cars.filter(c => {
+    if (brand && !c.name.toLowerCase().includes(brand.toLowerCase())) return false;
+    if (type  && c.type  !== type)  return false;
+    if (year  && c.year  !== year)  return false;
+    if (badge && c.badge !== badge) return false;
+    if (maxPrice < 25 && priceToNum(c.price) > maxPrice) return false;
+    return true;
+  });
+
+  renderAutosGrid(filtered);
+  updateChips();
+}
+
+function resetFilters() {
+  document.getElementById('f-brand').value = '';
+  document.getElementById('f-type').value  = '';
+  document.getElementById('f-year').value  = '';
+  document.getElementById('f-badge').value = '';
+  document.getElementById('f-price').value = 25;
+  document.getElementById('sliderDisplay').textContent = '₦20M+';
+  document.getElementById('activeFilters').innerHTML = '';
+  renderAutosGrid(cars);
+}
+
+function updateChips() {
+  const chips = [];
+  const brand = document.getElementById('f-brand').value;
+  const type  = document.getElementById('f-type').value;
+  const year  = document.getElementById('f-year').value;
+  const badge = document.getElementById('f-badge').value;
+  const maxP  = parseInt(document.getElementById('f-price').value);
+  if (brand) chips.push(brand);
+  if (type)  chips.push(type);
+  if (year)  chips.push(year);
+  if (badge) chips.push(badge);
+  if (maxP < 25) chips.push('Under ₦' + maxP + 'M');
+  document.getElementById('activeFilters').innerHTML = chips.map(c => `<span class="filter-chip">${c}</span>`).join('');
+}
+
+// ── HERO SEARCH ──
+function heroSearch() {
+  const brand  = document.getElementById('hs-brand').value;
+  const model  = document.getElementById('hs-model').value.trim();
+  const year   = document.getElementById('hs-year').value;
+  const budget = document.getElementById('hs-budget').value;
+
+  // Go to auto hub then apply filters
+  showPage('autos', null);
+  setTimeout(() => {
+    if (brand) document.getElementById('f-brand').value = brand;
+    if (year && year !== 'Any Year') document.getElementById('f-year').value = year;
+    applyFilters();
+  }, 200);
+}
+
+function heroSearchWA() {
+  const brand  = document.getElementById('hs-brand').value || 'Not specified';
+  const model  = document.getElementById('hs-model').value.trim() || 'Not specified';
+  const year   = document.getElementById('hs-year').value || 'Any';
+  const budget = document.getElementById('hs-budget').value || 'Not specified';
+
+  const msg = [
+    'Hi Index Autos,',
+    '',
+    "I'm searching for a vehicle with the following specs:",
+    '  • Brand: ' + brand,
+    '  • Model: ' + model,
+    '  • Year: ' + year,
+    '  • Budget: ' + budget,
+    '',
+    'Do you have this in stock or can you source it for me? Please send options.'
+  ].join('\n');
+
+  window.open('https://wa.me/2348066159566?text=' + encodeURIComponent(msg), '_blank');
+}
+
+// ── CAR REQUEST WHATSAPP ──
+function submitCarRequest() {
+  const name  = document.getElementById('cr-name').value.trim();
+  const phone = document.getElementById('cr-phone').value.trim();
+  const brand = document.getElementById('cr-brand').value;
+  const model = document.getElementById('cr-model').value.trim();
+  const year  = document.getElementById('cr-year').value;
+  const budget= document.getElementById('cr-budget').value;
+  const color = document.getElementById('cr-color').value.trim();
+  const trans = document.getElementById('cr-trans').value;
+  const notes = document.getElementById('cr-notes').value.trim();
+
+  const car = [brand, model].filter(Boolean).join(' ') || 'Not specified';
+  const msg = [
+    'Hi Index Autos (Indexcomm Nigeria Services Ltd),',
+    '',
+    'I am looking for a specific vehicle. Here are my details:',
+    '',
+    '👤 Name: ' + (name || '—'),
+    '📞 Phone: ' + (phone || '—'),
+    '',
+    '🚘 Car Details:',
+    '  • Vehicle: ' + car,
+    '  • Year: ' + (year || 'Any'),
+    '  • Colour: ' + (color || 'Any'),
+    '  • Transmission: ' + (trans || 'Any'),
+    '  • Budget: ' + (budget || 'Not specified'),
+    '',
+    '📝 Notes: ' + (notes || '—'),
+    '',
+    'Please send me available options and full cost breakdown. Thank you.'
+  ].join('\n');
+
+  window.open('https://wa.me/2348066159566?text=' + encodeURIComponent(msg), '_blank');
+}
+
+// ── PAGE ROUTING ──
+function showPage(id, linkEl) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  if (linkEl) linkEl.classList.add('active');
+  
+  // Show back button if not on home page
+  const backBtn = document.getElementById('backBtn');
+  if (id !== 'home') {
+    backBtn.classList.add('show');
+  } else {
+    backBtn.classList.remove('show');
+  }
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(initReveal, 100);
+}
+
+function backHome() {
+  showPage('home', null);
+}
+
+// ── SCROLL REVEAL ──
+function initReveal() {
+  const els = document.querySelectorAll('.reveal:not(.visible)');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+}
+initReveal();
+
+// ── MOBILE MENU ──
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── LOAD CALCULATOR ──
+function toggleApp(el) {
+  el.classList.toggle('selected');
+  updateCalc();
+}
+function updateCalc() {
+  const selected = document.querySelectorAll('.appliance-item.selected');
+  let watts = 0;
+  selected.forEach(el => watts += parseInt(el.dataset.watts));
+  const res = document.getElementById('calcResult');
+  const wEl = document.getElementById('calcWatts');
+  const pEl = document.getElementById('calcPkg');
+  if (watts > 0) {
+    res.classList.add('show');
+    wEl.textContent = watts + 'W';
+    pEl.textContent = watts <= 600 ? 'Basic Home Package' : 'Executive Premium Package';
+  } else {
+    res.classList.remove('show');
+  }
+}
+
+function openSolarWA() {
+  const selected = Array.from(document.querySelectorAll('.appliance-item.selected')).map(el => el.querySelector('span:last-child').textContent);
+  const msg = selected.length
+    ? 'Hi Index Autos, I need a solar estimate for: ' + selected.join(', ')
+    : 'Hi Index Autos, I need a solar / inverter estimate.';
+  window.open('https://wa.me/2348066159566?text=' + encodeURIComponent(msg), '_blank');
+}
+
+// ── CONTACT FORM ──
+function submitContact() {
+  const n = document.getElementById('cf-name').value.trim();
+  const l = document.getElementById('cf-loc').value.trim();
+  const p = document.getElementById('cf-phone').value.trim();
+  const s = document.getElementById('cf-service').value;
+  const m = document.getElementById('cf-msg').value.trim();
+  const msg = `Hi Index Autos (Indexcomm Nigeria Services Ltd),\n\nName: ${n||'—'}\nLocation: ${l||'—'}\nPhone: ${p||'—'}\nService: ${s}\nMessage: ${m||'—'}`;
+  window.open('https://wa.me/2348066159566?text=' + encodeURIComponent(msg), '_blank');
+}
+</script>
+</body>
+</html>
